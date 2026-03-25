@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+---
+<BaseLayout title="Terms of Service -- Cloud Printing Australia" description="Terms of service for cloudprinting.au.">
+  <section class="section-pad">
+    <div class="container" style="max-width:760px">
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:32px">Terms of Service</h1>
+      <div class="prose">
+        <p><strong>Last updated:</strong> March 2026</p>
+        <p>These terms govern your use of the cloudprinting.au website operated by Voice Recognition Australia.</p>
+        <h2>About this website</h2>
+        <p>cloudprinting.au is an informational and reseller website for the Tungsten Printix cloud print management platform. Voice Recognition Australia is an authorised Tungsten reseller. We provide sales, support, and deployment assistance for Australian organisations.</p>
+        <h2>Printix service terms</h2>
+        <p>Use of the Printix cloud print management service is governed by the Printix terms of service and end-user licence agreement provided by Tungsten Automation. By starting a free trial or purchasing a subscription through us, you agree to those terms in addition to these website terms.</p>
+        <h2>Accuracy of information</h2>
+        <p>We make reasonable efforts to ensure the information on this website is accurate and up to date. Pricing, features, and specifications may change without notice. Software vendors may update their products independently. Verify current details directly with us or with Tungsten Automation before making purchasing decisions.</p>
+        <h2>Pricing</h2>
+        <p>All prices shown on this website are in Australian Dollars (AUD) including GST unless otherwise stated. Pricing is accurate at the time of publication but may change. Contact us for a current quote.</p>
+        <h2>Limitation of liability</h2>
+        <p>To the extent permitted by law, Voice Recognition Australia is not liable for any loss or damage arising from the use of this website or the information provided on it. This does not affect your rights under Australian Consumer Law.</p>
+        <h2>Intellectual property</h2>
+        <p>Printix is a trademark of Tungsten Automation. All other trademarks belong to their respective owners. Content on this website is the property of Voice Recognition Australia unless otherwise attributed.</p>
+        <h2>Contact</h2>
+        <p>For questions about these terms, please <a href="/contact">contact us</a>.</p>
+      </div>
+    </div>
+  </section>
+  <style is:inline>
+    .prose h2{font-size:20px;font-weight:700;margin-top:32px;margin-bottom:12px}
+    .prose p{font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:16px}
+    .prose a{color:var(--brand);font-weight:600}
+  </style>
+</BaseLayout>

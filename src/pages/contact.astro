@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+const c = site.colours;
+
+const extraSchema = [{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Cloud Printing Australia",
+  "description": "Get in touch for Printix cloud print management enquiries, free trials, volume pricing, and support.",
+  "url": site.siteUrl + "/contact",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+}];
+---
+<BaseLayout title="Contact us -- Printix Cloud Print Management" description="Get in touch for Printix cloud print management enquiries, free trials, volume pricing, and support." extraSchema={extraSchema}>
+  <section class="section-pad">
+    <div class="container" style="max-width:600px">
+      <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:12px;text-align:center">Contact us</h1>
+      <p class="muted text-center" style="margin-bottom:36px">Questions about Printix cloud print management? Need a quote for your organisation? Want to start a free trial? Get in touch.</p>
+      <form id="_form_295_" method="POST" action={site.form.actionUrl} novalidate>
+        <input type="hidden" name="u" value={site.form.formId} />
+        <input type="hidden" name="f" value={site.form.formId} />
+        <input type="hidden" name="s" value="" />
+        <input type="hidden" name="c" value="0" />
+        <input type="hidden" name="m" value="0" />
+        <input type="hidden" name="act" value="sub" />
+        <input type="hidden" name="v" value="2" />
+        <input type="hidden" name="or" value={site.form.orUuid} />
+        <div class="form-field">
+          <label for="contact-firstname">First name *</label>
+          <input type="text" name="firstname" id="contact-firstname" required />
+        </div>
+        <div class="form-field">
+          <label for="contact-email">Email *</label>
+          <input type="email" name="email" id="contact-email" required />
+        </div>
+        <div class="form-field">
+          <label for="contact-phone">Phone</label>
+          <input type="text" name="phone" id="contact-phone" />
+        </div>
+        <div class="form-field">
+          <label for="contact-company">Company</label>
+          <input type="text" name="field[35]" id="contact-company" />
+        </div>
+        <div class="form-field">
+          <label for="contact-users">Number of users</label>
+          <input type="text" name="field[21]" id="contact-users" />
+        </div>
+        <div class="form-field">
+          <label for="contact-comments">Comments</label>
+          <textarea name="field[18]" id="contact-comments" rows="4"></textarea>
+        </div>
+        <button type="submit" id="_form_295_submit" class="btn-primary" style="width:100%;justify-content:center">{site.form.submitText}</button>
+      </form>
+      <div id="_form_295_thank_you" style="display:none;text-align:center;padding:32px 0">
+        <p style="font-size:18px;font-weight:600;margin-bottom:8px">Thank you!</p>
+        <p class="muted">We will get back to you shortly.</p>
+      </div>
+    </div>
+  </section>
+  <style is:inline>
+    .form-field{margin-bottom:16px}
+    .form-field label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+    .form-field input,.form-field textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:8px;font-size:15px;font-family:inherit;transition:border-color 0.2s;box-sizing:border-box}
+    .form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--brand)}
+    .form-field textarea{resize:vertical}
+  </style>
+  <script is:inline>
+    (function(){
+      var form = document.getElementById('_form_295_');
+      if (!form) return;
+      var thankYou = document.getElementById('_form_295_thank_you');
+      function serialize(f) {
+        var q = [];
+        for (var i = 0; i < f.elements.length; i++) {
+          var el = f.elements[i];
+          if (!el.name) continue;
+          if (el.type === 'submit' || el.type === 'button') continue;
+          q.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value));
+        }
+        return q.join('&');
+      }
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var fn = form.querySelector('[name="firstname"]');
+        var email = form.querySelector('[name="email"]');
+        if (!fn.value.trim()) { fn.style.borderColor = '#F37C7B'; return; }
+        if (!email.value.trim() || !/^[^@]+@[^@]+\.[^@]+$/.test(email.value)) { email.style.borderColor = '#F37C7B'; return; }
+        var btn = document.getElementById('_form_295_submit');
+        btn.disabled = true; btn.textContent = 'Submitting...';
+        var data = serialize(form);
+        var script = document.createElement('script');
+        script.charset = 'utf-8';
+        script.src = 'https://voicerecognition.activehosted.com/proc.php?' + data + '&jsonp=true';
+        script.onerror = function() { btn.disabled = false; btn.textContent = site.form?.submitText || 'Request Information'; };
+        document.head.appendChild(script);
+        window._show_thank_you = function() { form.style.display = 'none'; thankYou.style.display = 'block'; };
+      });
+    })();
+  </script>
+</BaseLayout>

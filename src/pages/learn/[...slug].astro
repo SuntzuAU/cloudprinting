@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import site from '../../site.config.json';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('learn');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'Tip' };
+---
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <article class="section-pad">
+    <div class="container" style="max-width:760px">
+      <div class="article-meta">
+        <a href="/learn" class="back-link"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to Learn</a>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class={`learn-tag learn-tag--${post.data.type}`}>{typeLabels[post.data.type] || post.data.type}</span>
+          <time datetime={post.data.date} class="muted">{new Date(post.data.date).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+        </div>
+      </div>
+      <h1 class="article-title">{post.data.title}</h1>
+      <div class="article-body">
+        <Content />
+      </div>
+    </div>
+  </article>
+  <section class="section-pad section-neutral">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Try Printix free for 30 days</h2>
+      <p class="muted" style="margin-bottom:24px">All features included. No credit card required.</p>
+      <a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a>
+    </div>
+  </section>
+  <style is:inline>
+    .article-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px}
+    .back-link{display:inline-flex;align-items:center;gap:4px;font-size:14px;color:var(--brand);font-weight:600;text-decoration:none}
+    .back-link:hover{text-decoration:underline}
+    .learn-tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:0.04em}
+    .learn-tag--article{color:#0891B2;background:#ECFEFF}
+    .learn-tag--guide{color:#059669;background:#ECFDF5}
+    .learn-tag--video{color:#DC2626;background:#FEF2F2}
+    .learn-tag--tip{color:#D97706;background:#FFFBEB}
+    .article-title{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:32px;line-height:1.2;letter-spacing:-0.02em}
+    .article-body{font-size:16px;line-height:1.8;color:var(--text)}
+    .article-body h2{font-size:24px;font-weight:700;margin-top:40px;margin-bottom:16px}
+    .article-body h3{font-size:20px;font-weight:600;margin-top:32px;margin-bottom:12px}
+    .article-body p{margin-bottom:20px;color:var(--muted)}
+    .article-body a{color:var(--brand);font-weight:600}
+    .article-body ul,.article-body ol{margin-bottom:20px;padding-left:24px;color:var(--muted)}
+    .article-body li{margin-bottom:8px;line-height:1.7}
+    .article-body blockquote{border-left:3px solid var(--brand);padding-left:20px;margin:24px 0;font-style:italic;color:var(--muted)}
+  </style>
+</BaseLayout>

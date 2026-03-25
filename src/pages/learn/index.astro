@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import site from '../../site.config.json';
+const posts = (await getCollection('learn')).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+const typeLabels = { article: 'Article', guide: 'Guide', video: 'Video', tip: 'Tip' };
+const typeColours = { article: { bg: '#ECFEFF', fg: '#0891B2' }, guide: { bg: '#ECFDF5', fg: '#059669' }, video: { bg: '#FEF2F2', fg: '#DC2626' }, tip: { bg: '#FFFBEB', fg: '#D97706' } };
+const typeIcons = {
+  article: 'M4 4h16v2H4zm0 4h16v2H4zm0 4h10v2H4zm0 4h16v2H4z',
+  guide: 'M12 2L4 7v11a2 2 0 002 2h12a2 2 0 002-2V7L12 2zm0 3.5L17 9v8H7V9l5-3.5zM9 11v2h6v-2H9zm0 3v2h4v-2H9z',
+  video: 'M4 4h16v12H4V4zm2 2v8h12V6H6zm-2 12h16v2H4v-2z',
+  tip: 'M12 2a7 7 0 00-4 12.7V17a2 2 0 002 2h4a2 2 0 002-2v-2.3A7 7 0 0012 2zm0 2a5 5 0 013 9v3h-6v-3a5 5 0 013-9zM9 20h6v1a1 1 0 01-1 1h-4a1 1 0 01-1-1v-1z'
+};
+---
+<BaseLayout title="Learn -- Cloud Print Management Guides and Articles" description="Guides, tutorials, and articles about cloud print management with Printix. Learn how to eliminate print servers and simplify printing.">
+  <section class="section-pad">
+    <div class="container" style="max-width:900px">
+      <p class="eyebrow">LEARN</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:12px">Guides, tutorials, and articles</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:48px">Learn about cloud print management, Printix deployment, and simplifying print infrastructure for your organisation.</p>
+      {posts.length > 0 ? (
+        <div class="learn-grid">
+          {posts.map(post => {
+            const tc = typeColours[post.data.type] || typeColours.article;
+            const icon = typeIcons[post.data.type] || typeIcons.article;
+            return (
+            <a href={`/learn/${post.slug}`} class="learn-card">
+              <div class="learn-thumb learn-thumb-placeholder" style={`background:${tc.bg}`}>
+                <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke={tc.fg} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5"><path d={icon}/></svg>
+                <span class="placeholder-label" style={`color:${tc.fg}`}>{typeLabels[post.data.type] || 'Article'}</span>
+              </div>
+              <div class="learn-card-body">
+                <div class="learn-meta">
+                  <span class={`learn-tag learn-tag--${post.data.type}`}>{typeLabels[post.data.type] || post.data.type}</span>
+                  <time datetime={post.data.date} class="muted">{new Date(post.data.date).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                </div>
+                <h2 class="learn-title">{post.data.title}</h2>
+                <p class="muted learn-desc">{post.data.description}</p>
+              </div>
+            </a>
+            );
+          })}
+        </div>
+      ) : (
+        <div class="text-center" style="padding:60px 0">
+          <p class="muted">Content coming soon. Check back for guides, tutorials, and articles about cloud print management.</p>
+        </div>
+      )}
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .learn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .learn-card{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s}
+    .learn-card:hover{border-color:var(--brand);box-shadow:0 6px 20px rgba(0,0,0,0.06);transform:translateY(-2px)}
+    .learn-card:hover .learn-title{color:var(--brand)}
+    .learn-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--neutral)}
+    .learn-thumb-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+    .placeholder-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;opacity:0.6}
+    .learn-card-body{padding:20px}
+    .learn-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .learn-meta time{font-size:12px}
+    .learn-tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;text-transform:uppercase;letter-spacing:0.04em}
+    .learn-tag--article{color:#0891B2;background:#ECFEFF}
+    .learn-tag--guide{color:#059669;background:#ECFDF5}
+    .learn-tag--video{color:#DC2626;background:#FEF2F2}
+    .learn-tag--tip{color:#D97706;background:#FFFBEB}
+    .learn-title{font-size:18px;font-weight:700;margin-bottom:6px;transition:color 0.2s;line-height:1.3}
+    .learn-desc{font-size:13px;line-height:1.5}
+    @media(max-width:640px){.learn-grid{grid-template-columns:1fr}}
+  </style>
+</BaseLayout>

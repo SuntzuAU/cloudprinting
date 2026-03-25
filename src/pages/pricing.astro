@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+const c = site.colours;
+
+const pricingFaqItems = [
+  { question: "What is included in every plan?", answer: "All plans include all features: secure print release, cloud driver store, capture and workflows, SSO integration, unlimited printers, devices, pages, and locations. The only difference between tiers is the per-user price based on volume." },
+  { question: "How is billing calculated?", answer: "Billing is based on active users -- anyone who logged into the Printix service at least once during the billing cycle. You only pay for users who actually use the service." },
+  { question: "Are there multi-year discounts?", answer: "Yes. 2-year and 3-year subscriptions are available with additional discounts. Contact us for a quote." },
+  { question: "What about education pricing?", answer: "Education institutions pay for staff and faculty users only. Student access is included free with an active staff subscription." },
+  { question: "Is there a free trial?", answer: "Yes. Printix offers a free 30-day trial with all features included. No credit card required." },
+  { question: "Can I upgrade my tier later?", answer: "Yes. As your organisation grows, you automatically move to the next volume tier at your renewal." }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": pricingFaqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+  }))
+};
+---
+<BaseLayout title="Printix Pricing Australia -- Cloud Print Management from A$2.46/user/month" description="Printix cloud print management pricing for Australian organisations. All features included at every tier. Volume discounts from 15 to 9,999 users. AUD inc GST." extraSchema={[faqSchema]}>
+  <section class="section-pad">
+    <div class="container text-center">
+      <p class="eyebrow">PRICING</p>
+      <h1 style="font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:12px">Simple per-user pricing</h1>
+      <p class="muted" style="font-size:16px;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto">All features included at every tier. No per-printer fees. No per-page fees. Volume discounts as you grow. All prices in AUD including GST.</p>
+      <div class="pricing-grid">
+        {site.pricing.tiers.map(tier => (<div class={`pricing-card ${tier.highlighted ? 'pricing-highlighted' : ''}`}>{tier.badge && <span class="pricing-badge">{tier.badge}</span>}<h3>{tier.name}</h3><div class="pricing-price"><span class="pricing-amount">{tier.price}</span>{tier.period && <span class="pricing-period">{tier.period}</span>}</div><p class="muted" style="font-size:14px;margin-bottom:20px">{tier.description}</p><ul class="pricing-features">{tier.features.map(f => (<li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke={c.brand} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{f}</li>))}</ul><a href={tier.ctaUrl} class={tier.highlighted ? 'btn-primary pricing-cta' : 'btn-secondary pricing-cta'}>{tier.ctaText}</a></div>))}
+      </div>
+      <p class="muted" style="font-size:13px;margin-top:24px">{site.pricing.disclaimer}</p>
+      <div style="margin-top:24px;padding:20px;background:var(--neutral);border-radius:12px;max-width:700px;margin-left:auto;margin-right:auto">
+        <p class="muted" style="font-size:14px;line-height:1.7">{site.pricing.volumeNote}</p>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">Pricing FAQ</h2>
+      {pricingFaqItems.map(item => (<details class="faq-item"><summary class="faq-question">{item.question}</summary><div class="faq-answer"><p>{item.answer}</p></div></details>))}
+    </div>
+  </section>
+  <section class="section-pad section-dark" style="padding:60px 0">
+    <div class="container text-center">
+      <h2 style="margin-bottom:12px">Start your free trial</h2>
+      <p class="muted" style="margin-bottom:24px">30 days, all features, no credit card required.</p>
+      <a href={site.hero.ctaPrimaryUrl} class="btn-primary btn-lg">{site.hero.ctaPrimary}</a>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}.pricing-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;transition:box-shadow 0.2s;text-align:left;display:flex;flex-direction:column}.pricing-card:hover{box-shadow:0 6px 24px rgba(0,0,0,0.06)}.pricing-highlighted{border-color:var(--cta);box-shadow:0 6px 24px rgba(234,88,12,0.1)}.pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cta);color:#fff;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;white-space:nowrap}.pricing-card h3{font-size:18px;margin-bottom:12px;font-weight:600}.pricing-amount{font-size:36px;font-weight:700;letter-spacing:-0.02em}.pricing-period{font-size:14px;color:var(--muted);margin-left:4px}.pricing-features{list-style:none;margin-bottom:24px;flex:1}.pricing-features li{display:flex;align-items:center;gap:8px;font-size:14px;margin-bottom:8px}.pricing-cta{width:100%;justify-content:center;text-align:center;margin-top:auto}
+    .btn-lg{padding:14px 36px;font-size:17px}
+    .faq-item{border-bottom:1px solid var(--border)}.faq-question{padding:20px 0;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}.faq-question::-webkit-details-marker{display:none}.faq-question::after{content:'+';font-size:20px;color:var(--muted)}.faq-item[open] .faq-question::after{content:'-'}.faq-answer{padding:0 0 20px}.faq-answer p{color:var(--muted);font-size:15px;line-height:1.7}
+    @media(max-width:1024px){.pricing-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.pricing-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}}
+  </style>
+</BaseLayout>
