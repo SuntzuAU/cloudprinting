@@ -6,7 +6,7 @@
   "seoTitle": "Cloud Print Management Australia -- Tungsten Printix | Cloud Printing Australia",
   "seoDescription": "Eliminate print servers with Printix cloud print management. Secure release, central management, hybrid cloud printing for business, government, education and enterprise. Australian authorised reseller.",
   "googleAnalyticsId": "G-5JQ8BG0E6T",
-  "_buildNote": "v1.0.0 - initial build from SRC template",
+  "_buildNote": "v1.0.1 - AC form 295 configured",
 
   "colours": {
     "brand": "#0891B2",
@@ -162,11 +162,11 @@
   ],
 
   "form": {
-    "formId": "PLACEHOLDER",
-    "orUuid": "PLACEHOLDER",
+    "formId": "295",
+    "orUuid": "b5354573-4afb-4035-aa3d-c28c33abacca",
     "actionUrl": "https://voicerecognition.activehosted.com/proc.php",
-    "submitText": "Contact us",
-    "cfields": { "18": "comments_about_your_needs" }
+    "submitText": "Request Information",
+    "cfields": { "21": "number_of_users", "35": "company", "18": "comments_about_your_needs" }
   },
 
   "footer": {
