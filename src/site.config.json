@@ -1,0 +1,200 @@
+{
+  "siteName": "Cloud Printing Australia",
+  "siteUrl": "https://cloudprinting.au",
+  "siteType": "reseller",
+  "siteId": "cloudprinting",
+  "seoTitle": "Cloud Print Management Australia -- Tungsten Printix | Cloud Printing Australia",
+  "seoDescription": "Eliminate print servers with Printix cloud print management. Secure release, central management, hybrid cloud printing for business, government, education and enterprise. Australian authorised reseller.",
+  "googleAnalyticsId": "G-5JQ8BG0E6T",
+  "_buildNote": "v1.0.0 - initial build from SRC template",
+
+  "colours": {
+    "brand": "#0891B2",
+    "brandLight": "#22D3EE",
+    "brandLightest": "#ECFEFF",
+    "cta": "#EA580C",
+    "ctaHover": "#C2410C",
+    "text": "#0F172A",
+    "muted": "#64748B",
+    "background": "#FFFFFF",
+    "neutral": "#F8FAFC",
+    "border": "#E2E8F0",
+    "darkSection": "#0F172A",
+    "darkSectionText": "#E2E8F0",
+    "darkSectionMuted": "#94A3B8",
+    "darkSectionAccent": "#22D3EE"
+  },
+
+  "organization": {
+    "name": "Voice Recognition Australia",
+    "legalName": "Voice Recognition Australia",
+    "url": "https://www.voicerecognition.com.au",
+    "logo": "https://cloudprinting.au/logo.png",
+    "foundingDate": "1999",
+    "founder": {
+      "name": "Russell Bewsell",
+      "jobTitle": "Founder and CEO",
+      "url": "https://www.linkedin.com/in/rbewsell/"
+    },
+    "sameAs": [
+      "https://www.voicerecognition.com.au"
+    ],
+    "contactPoint": {
+      "contactType": "customer support",
+      "url": "https://cloudprinting.au/contact"
+    }
+  },
+
+  "nav": {
+    "logo": "/logo.png",
+    "links": [
+      { "label": "Features", "href": "/#features" },
+      { "label": "Who it's for", "href": "#", "dropdown": true },
+      { "label": "Pricing", "href": "/pricing" },
+      { "label": "Compare", "href": "#", "dropdown2": true },
+      { "label": "Learn", "href": "/learn" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "useCases": [
+      { "label": "Government", "href": "/government" },
+      { "label": "Enterprise", "href": "/enterprise" },
+      { "label": "Legal", "href": "/legal" },
+      { "label": "Medical", "href": "/medical" },
+      { "label": "Education", "href": "/education" }
+    ],
+    "comparisons": [
+      { "label": "Printix vs PaperCut", "href": "/compare/printix-vs-papercut" },
+      { "label": "Printix vs Universal Print", "href": "/compare/printix-vs-universal-print" },
+      { "label": "Printix vs Vasion Print", "href": "/compare/printix-vs-vasion-print" }
+    ],
+    "ctaText": "Start free trial",
+    "ctaUrl": "https://printix.net/printix-trial"
+  },
+
+  "hero": {
+    "headline": "Cloud print management.",
+    "headlineAccent": "No print servers required.",
+    "subheadline": "Printix replaces traditional print servers with cloud-managed printing. Secure release, central control, and simplified driver management across every office, campus, and home workspace.",
+    "bullets": [
+      "Eliminate print servers and reduce IT overhead.",
+      "Secure print release via app, QR code, or badge.",
+      "Windows, Mac, Chromebook, iOS and Android support."
+    ],
+    "ctaPrimary": "Start free trial",
+    "ctaPrimaryUrl": "https://printix.net/printix-trial",
+    "ctaSecondary": "Contact us",
+    "ctaSecondaryUrl": "/contact",
+    "microcopy": "Free 30-day trial. All features included. No credit card required.",
+    "trustLine": "Authorised Tungsten reseller. Voice Recognition Australia -- 25 years deploying enterprise technology across Australian business, government, healthcare and education."
+  },
+
+  "clarityStrip": {
+    "items": [
+      { "label": "Works with", "value": "Any printer, any device, any location" },
+      { "label": "Integrates with", "value": "Microsoft Entra ID, Google Workspace, Okta" },
+      { "label": "Pricing from", "value": "A$3.93/user/month inc GST" }
+    ]
+  },
+
+  "stats": [
+    { "value": "0", "label": "Print servers needed" },
+    { "value": "6-12", "label": "Months to ROI" },
+    { "value": "100%", "label": "Cloud managed" },
+    { "value": "30", "label": "Day free trial" }
+  ],
+
+  "useCaseCards": [
+    { "title": "Government", "description": "Secure printing across departments and sites. Audit trails, compliance controls, and simplified operations for shared devices.", "href": "/government", "icon": "government" },
+    { "title": "Enterprise", "description": "Hybrid cloud print management for multi-site organisations. Eliminate print servers and unify infrastructure.", "href": "/enterprise", "icon": "business" },
+    { "title": "Legal", "description": "Confidential document handling with secure print release. Integrate with document management systems.", "href": "/legal", "icon": "legal" },
+    { "title": "Medical", "description": "Patient privacy through secure release at MFDs. Multi-clinic management from a central dashboard.", "href": "/medical", "icon": "medical" },
+    { "title": "Education", "description": "Staff and faculty licensing with students free. Campus-wide secure printing and cost control.", "href": "/education", "icon": "student" }
+  ],
+
+  "features": [
+    { "title": "Serverless print infrastructure", "description": "Remove traditional print servers entirely. Printix manages everything from the cloud while print processing stays local on your network." },
+    { "title": "Secure print release", "description": "Hold documents until the user releases them at the device. Release via the Printix app, QR code, NFC, or ID badge through Printix Go." },
+    { "title": "Central web-based management", "description": "Configure and control printers, queues, drivers, and policies from a single cloud dashboard. Manage all sites from anywhere." },
+    { "title": "Cross-platform support", "description": "Print from Windows, Mac, Chromebook, iOS, and Android. Support every device in your organisation without complexity." },
+    { "title": "Driver and queue automation", "description": "Cloud driver store with automated queue and driver installation. Reduce helpdesk tickets and simplify onboarding." },
+    { "title": "Capture and workflows", "description": "Scan from MFDs or mobile devices directly to email, OneDrive, or SharePoint. OCR-enabled digitisation for searchable PDFs." },
+    { "title": "Hybrid cloud printing", "description": "Add cloud-managed home and remote printing to existing on-premise print systems. Bridge legacy infrastructure with modern cloud control." },
+    { "title": "Single sign-on integration", "description": "Authenticate with Microsoft Entra ID, Google Workspace, Okta, or OneLogin. Deploy via Microsoft Endpoint Manager." },
+    { "title": "Zero Trust security", "description": "Encrypted print jobs, centralised reporting, and audit trails. Print jobs stay on your local network. Compliance-ready." }
+  ],
+
+  "security": {
+    "headline": "Security and compliance",
+    "points": [
+      "Print jobs stay on the local network and are encrypted",
+      "Documents encrypted and stored locally until released",
+      "Single sign-on with enterprise identity providers",
+      "Centralised reporting and audit trails for compliance",
+      "Document names visible only to document owner",
+      "Zero Trust Architecture with encrypted job handling"
+    ]
+  },
+
+  "pricing": {
+    "disclaimer": "Pricing in AUD including GST. All plans include all features and integrations with unlimited printers, devices, pages, and locations. Pricing accurate at time of publication.",
+    "tiers": [
+      { "name": "15-299 users", "price": "$3.93", "period": "per user/month", "description": "1-year annual subscription. Ideal for small to mid-size organisations.", "features": ["All features included", "Unlimited printers and devices", "Unlimited pages and locations", "Secure print release", "Cloud driver store", "Capture and workflows", "SSO integration", "30-day free trial"], "ctaText": "Start free trial", "ctaUrl": "https://printix.net/printix-trial", "highlighted": true, "badge": "Most common" },
+      { "name": "300-499 users", "price": "$3.45", "period": "per user/month", "description": "1-year annual subscription. Volume pricing for growing organisations.", "features": ["All features included", "Unlimited printers and devices", "Unlimited pages and locations", "Secure print release", "Cloud driver store", "Capture and workflows", "SSO integration", "30-day free trial"], "ctaText": "Request a quote", "ctaUrl": "/contact", "highlighted": false },
+      { "name": "500-999 users", "price": "$3.20", "period": "per user/month", "description": "1-year annual subscription.", "features": ["All features included", "Unlimited printers and devices", "Unlimited pages and locations"], "ctaText": "Request a quote", "ctaUrl": "/contact", "highlighted": false },
+      { "name": "1,000-2,499 users", "price": "$2.95", "period": "per user/month", "description": "1-year annual subscription.", "features": ["All features included", "Unlimited printers and devices", "Unlimited pages and locations"], "ctaText": "Request a quote", "ctaUrl": "/contact", "highlighted": false },
+      { "name": "2,500-4,999 users", "price": "$2.72", "period": "per user/month", "description": "1-year annual subscription.", "features": ["All features included", "Unlimited printers and devices", "Unlimited pages and locations"], "ctaText": "Request a quote", "ctaUrl": "/contact", "highlighted": false },
+      { "name": "5,000-9,999 users", "price": "$2.46", "period": "per user/month", "description": "1-year annual subscription.", "features": ["All features included", "Unlimited printers and devices", "Unlimited pages and locations"], "ctaText": "Request a quote", "ctaUrl": "/contact", "highlighted": false }
+    ],
+    "volumeNote": "Multi-year subscriptions (2 and 3-year terms) available with additional discounts. Education institutions receive free student access with a staff subscription. Non-profit discounts available. Contact us for a quote."
+  },
+
+  "faq": [
+    { "question": "What is cloud print management?", "answer": "Cloud print management replaces traditional on-premise print servers with a cloud-managed platform. You manage printers, queues, drivers, and policies from a web dashboard while print processing stays local on your network. No print servers to maintain, patch, or back up." },
+    { "question": "Do print jobs go through the cloud?", "answer": "No. Print data stays on your local network. Printix manages configuration, policy, and reporting from the cloud, but print jobs are processed locally. Documents are encrypted and stored on the endpoint until released at the printer." },
+    { "question": "What printers does Printix support?", "answer": "Printix works with any printer that supports standard protocols (IPP, RAW 9100, or LPR). There is no need to invest in new certified printers or print connectors." },
+    { "question": "How does secure print release work?", "answer": "Documents are held until the user releases them at the device. Users can release via the Printix mobile app, QR code scanning, NFC tap, or ID badge using Printix Go embedded on supported MFDs from Brother, Canon, Epson, HP, Konica Minolta, Kyocera, Lexmark, Ricoh, and Xerox." },
+    { "question": "Can I use Printix alongside Microsoft Universal Print?", "answer": "Yes. Printix extends Universal Print capabilities with direct IP printing where jobs stay local, secure release workflows, and broader cross-platform support. Many organisations use Printix as the feature layer on top of Universal Print infrastructure." },
+    { "question": "What about home and remote printing?", "answer": "Printix supports home office and remote printing without VPN. Users can print securely from any location, and IT retains central management and reporting visibility." },
+    { "question": "How long does setup take?", "answer": "Printix is cloud-native with automatic updates. There is no complex installation or configuration required. Most organisations are operational within days, not weeks." },
+    { "question": "Is there a free trial?", "answer": "Yes. Printix offers a free 30-day trial with all features included. No credit card required." },
+    { "question": "What does the education plan include?", "answer": "Education institutions pay for staff and faculty users only. Student access is included free with an active staff subscription." },
+    { "question": "How is billing calculated?", "answer": "Billing is based on active users -- anyone who logged into the Printix service at least once during the billing cycle. You only pay for users who actually use the service." }
+  ],
+
+  "form": {
+    "formId": "PLACEHOLDER",
+    "orUuid": "PLACEHOLDER",
+    "actionUrl": "https://voicerecognition.activehosted.com/proc.php",
+    "submitText": "Contact us",
+    "cfields": { "18": "comments_about_your_needs" }
+  },
+
+  "footer": {
+    "tagline": "Cloud print management for Australian business, government, healthcare and education. Authorised Tungsten Printix reseller.",
+    "columns": [
+      { "heading": "Product", "links": [{ "label": "Features", "href": "/#features" }, { "label": "Pricing", "href": "/pricing" }, { "label": "Free trial", "href": "https://printix.net/printix-trial" }] },
+      { "heading": "Who it's for", "links": [{ "label": "Government", "href": "/government" }, { "label": "Enterprise", "href": "/enterprise" }, { "label": "Legal", "href": "/legal" }, { "label": "Medical", "href": "/medical" }, { "label": "Education", "href": "/education" }] },
+      { "heading": "Compare", "links": [{ "label": "vs PaperCut", "href": "/compare/printix-vs-papercut" }, { "label": "vs Universal Print", "href": "/compare/printix-vs-universal-print" }, { "label": "vs Vasion Print", "href": "/compare/printix-vs-vasion-print" }] },
+      { "heading": "Company", "links": [{ "label": "Contact", "href": "/contact" }, { "label": "Learn", "href": "/learn" }, { "label": "Privacy", "href": "/privacy" }, { "label": "Terms", "href": "/terms" }] }
+    ],
+    "social": [
+      { "platform": "Website", "url": "https://www.voicerecognition.com.au" }
+    ],
+    "copyright": "2026 Voice Recognition Australia. All rights reserved."
+  },
+
+  "structuredData": {
+    "type": "Product",
+    "name": "Tungsten Printix Cloud Print Management",
+    "description": "Cloud-native print management platform that eliminates print servers. Secure print release, central management, cross-platform support for Windows, Mac, Chromebook, iOS and Android.",
+    "brand": "Tungsten Automation",
+    "offers": [
+      { "price": "3.93", "priceCurrency": "AUD", "description": "15-299 users, 1-year annual, per user per month inc GST" },
+      { "price": "3.45", "priceCurrency": "AUD", "description": "300-499 users, 1-year annual, per user per month inc GST" },
+      { "price": "3.20", "priceCurrency": "AUD", "description": "500-999 users, 1-year annual, per user per month inc GST" },
+      { "price": "2.95", "priceCurrency": "AUD", "description": "1,000-2,499 users, 1-year annual, per user per month inc GST" },
+      { "price": "2.72", "priceCurrency": "AUD", "description": "2,500-4,999 users, 1-year annual, per user per month inc GST" },
+      { "price": "2.46", "priceCurrency": "AUD", "description": "5,000-9,999 users, 1-year annual, per user per month inc GST" }
+    ]
+  }
+}
