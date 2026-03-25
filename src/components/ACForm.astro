@@ -1,0 +1,232 @@
+---
+// ActiveCampaign Form 295 - Cloud Printing Australia
+// Copied from dp16 ACForm.astro reference pattern
+// Changed: form ID (295), or UUID, button colour (cta orange)
+---
+<div class="formbox">
+  <div style="font-weight:800;font-size:20px;color:#0f172a;margin-bottom:4px">Get in touch</div>
+  <div style="color:#475569;font-size:15px;margin-bottom:16px">Local Australian support. Fast response.</div>
+
+  <form method="POST" action="https://voicerecognition.activehosted.com/proc.php" id="_form_295_" class="_form _form_295 _inline-form" novalidate data-styles-version="5">
+    <input type="hidden" name="u" value="295" />
+    <input type="hidden" name="f" value="295" />
+    <input type="hidden" name="s" />
+    <input type="hidden" name="c" value="0" />
+    <input type="hidden" name="m" value="0" />
+    <input type="hidden" name="act" value="sub" />
+    <input type="hidden" name="v" value="2" />
+    <input type="hidden" name="or" value="b5354573-4afb-4035-aa3d-c28c33abacca" />
+    <div class="_form-content">
+      <div class="_form_element _full_width">
+        <div class="_field-wrapper">
+          <input type="text" id="firstname" name="firstname" placeholder="Your Name" required />
+        </div>
+      </div>
+      <div class="_form_element _full_width">
+        <div class="_field-wrapper">
+          <input type="text" id="email" name="email" placeholder="Your Email" required />
+        </div>
+      </div>
+      <div class="_form_element _full_width">
+        <div class="_field-wrapper">
+          <input type="text" id="phone" name="phone" placeholder="Your Phone Number" />
+        </div>
+      </div>
+      <div class="_form_element _full_width">
+        <div class="_field-wrapper">
+          <input type="text" id="field21" name="field[21]" placeholder="Number of Users" />
+        </div>
+      </div>
+      <div class="_form_element _full_width">
+        <div class="_field-wrapper">
+          <input type="text" id="field35" name="field[35]" placeholder="Company / Organisation" />
+        </div>
+      </div>
+      <div class="_form_element _full_width">
+        <div class="_field-wrapper">
+          <textarea id="field18" name="field[18]" placeholder="Optionally describe your needs"></textarea>
+        </div>
+      </div>
+      <div class="_button-wrapper _full_width">
+        <button id="_form_295_submit" class="_submit" type="submit">Request Information</button>
+      </div>
+    </div>
+    <div class="_form-thank-you" style="display:none;"></div>
+  </form>
+</div>
+
+<style is:inline>
+  ._form_element { margin-bottom: 10px; }
+  ._form_element input[type="text"],
+  ._form_element textarea {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #0f172a;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, sans-serif;
+    padding: 10px 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  ._form_element textarea { resize: vertical; min-height: 80px; }
+  ._submit {
+    background: #EA580C;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px 20px;
+    width: 100%;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  ._submit:hover { background: #C2410C; }
+  ._submit:disabled { opacity: 0.5; cursor: not-allowed; }
+  ._error-inner {
+    padding: 8px 12px;
+    background: #FFDDDD;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #000;
+    margin-bottom: 8px;
+  }
+  ._form-thank-you {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #166534;
+    padding: 20px;
+  }
+</style>
+
+<script>
+  window.cfields = {"21": "number_of_users", "35": "company", "18": "comments_about_your_needs"};
+
+  window._show_thank_you = function(id, message, trackcmp_url, email) {
+    var form = document.getElementById('_form_' + id + '_'),
+        thank_you = form.querySelector('._form-thank-you');
+    form.querySelector('._form-content').style.display = 'none';
+    thank_you.innerHTML = message;
+    thank_you.style.display = 'block';
+    const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
+    var visitorObject = window[vgoAlias];
+    if (email && typeof visitorObject !== 'undefined') {
+      visitorObject('setEmail', email);
+      visitorObject('update');
+    } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
+      _load_script(trackcmp_url);
+    }
+  };
+
+  window._show_error = function(id, message, html) {
+    var form = document.getElementById('_form_' + id + '_'),
+        err = document.createElement('div'),
+        button = form.querySelector('button[type="submit"]'),
+        old_error = form.querySelector('._form_error');
+    if (old_error) old_error.parentNode.removeChild(old_error);
+    err.innerHTML = message;
+    err.className = '_error-inner _form_error _no_arrow';
+    var wrapper = document.createElement('div');
+    wrapper.className = '_form-inner';
+    wrapper.appendChild(err);
+    button.parentNode.insertBefore(wrapper, button);
+    var submitButton = form.querySelector('[id^="_form"][id$="_submit"]');
+    submitButton.disabled = false;
+  };
+
+  window._load_script = function(url, callback, isSubmit) {
+    var head = document.querySelector('head'), script = document.createElement('script'), r = false;
+    var submitButton = document.querySelector('#_form_295_submit');
+    script.charset = 'utf-8';
+    script.src = url;
+    if (callback) {
+      script.onload = script.onreadystatechange = function() {
+        if (!r && (!this.readyState || this.readyState == 'complete')) {
+          r = true; callback();
+        }
+      };
+    }
+    script.onerror = function() {
+      if (isSubmit) {
+        _show_error("295", "Sorry, your submission failed. Please try again.");
+        submitButton.disabled = false;
+      }
+    };
+    head.appendChild(script);
+  };
+
+  (function() {
+    if (window.location.search.indexOf('excludeform') !== -1) return false;
+    var form_to_submit = document.getElementById('_form_295_');
+    if (!form_to_submit) return;
+    var allInputs = form_to_submit.querySelectorAll('input, select, textarea');
+    var submitted = false;
+
+    var validate_field = function(elem, remove) {
+      var value = elem.value, no_error = true;
+      elem.className = elem.className.replace(/ ?_has_error ?/g, '');
+      if (elem.getAttribute('required') !== null) {
+        if (value === undefined || value === null || value === '') {
+          elem.className = elem.className + ' _has_error';
+          no_error = false;
+        }
+      }
+      if (no_error && elem.name == 'email') {
+        if (!value.match(/^[\+_a-z0-9-'&=]+(\.[[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)) {
+          elem.className = elem.className + ' _has_error';
+          no_error = false;
+        }
+      }
+      return no_error;
+    };
+
+    var validate_form = function(e) {
+      var no_error = true;
+      for (var i = 0; i < allInputs.length; i++) {
+        var input = allInputs[i];
+        if (input.getAttribute('required') !== null || input.name === 'email') {
+          if (!validate_field(input)) no_error = false;
+        }
+      }
+      if (!no_error && e) e.preventDefault();
+      return no_error;
+    };
+
+    var _form_serialize = function(form) {
+      if (!form || form.nodeName !== 'FORM') return;
+      var i, q = [];
+      for (i = 0; i < form.elements.length; i++) {
+        if (form.elements[i].name === '') continue;
+        switch (form.elements[i].nodeName) {
+          case 'INPUT':
+            switch (form.elements[i].type) {
+              case 'text': case 'hidden': case 'password': case 'button': case 'reset': case 'submit':
+                q.push(form.elements[i].name + '=' + encodeURIComponent(form.elements[i].value)); break;
+              case 'checkbox': case 'radio':
+                if (form.elements[i].checked) q.push(form.elements[i].name + '=' + encodeURIComponent(form.elements[i].value)); break;
+            } break;
+          case 'TEXTAREA':
+            q.push(form.elements[i].name + '=' + encodeURIComponent(form.elements[i].value)); break;
+          case 'SELECT':
+            q.push(form.elements[i].name + '=' + encodeURIComponent(form.elements[i].value)); break;
+        }
+      }
+      return q.join('&');
+    };
+
+    form_to_submit.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (validate_form(e)) {
+        var submitButton = document.getElementById('_form_295_submit');
+        submitButton.disabled = true;
+        var serialized = _form_serialize(form_to_submit).replace(/%0A/g, '\\n');
+        var err = form_to_submit.querySelector('._form_error');
+        if (err) err.parentNode.removeChild(err);
+        _load_script('https://voicerecognition.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
+      }
+    });
+  })();
+</script>
