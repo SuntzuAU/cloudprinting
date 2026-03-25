@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+const c = site.colours;
+const extraSchema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Cloud Print Management for Healthcare -- Printix",
+  "description": "Patient privacy through secure print release at MFDs. Multi-clinic cloud print management.",
+  "url": site.siteUrl + "/medical",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+}];
+---
+<BaseLayout title="Cloud Print Management for Healthcare -- Printix" description="Patient privacy through secure print release. Multi-clinic cloud print management for Australian healthcare organisations." extraSchema={extraSchema}>
+  <section class="section-pad">
+    <div class="container usecase-hero">
+      <p class="eyebrow">HEALTHCARE</p>
+      <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Secure printing for healthcare</h1>
+      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:600px">Patient documents require controlled printing. Printix holds documents until the authorised clinician or administrator releases them at the device, supporting patient privacy and reducing the risk of sensitive information being left on shared printers.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a><a href="/contact" class="btn-secondary">Request a quote</a></div>
+      <p class="muted" style="font-size:13px">Free 30-day trial. All features included.</p>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">Designed for healthcare environments</h2>
+      <div class="benefit-grid">
+        <div class="benefit"><h3>Secure print release at MFDs</h3><p class="muted">Hold patient documents until released by the authorised user at the device. Supports Printix Go on MFDs from Brother, Canon, Epson, HP, Konica Minolta, Kyocera, Lexmark, Ricoh, and Xerox.</p></div>
+        <div class="benefit"><h3>Patient privacy</h3><p class="muted">Print jobs encrypted and stored locally until released. Document names visible only to the document owner. Print data never passes through the cloud.</p></div>
+        <div class="benefit"><h3>Multi-clinic management</h3><p class="muted">Manage printers across multiple clinics, wards, and facilities from a single cloud dashboard. Consistent policies and security controls regardless of location.</p></div>
+        <div class="benefit"><h3>Scan to clinical systems</h3><p class="muted">Scan from MFDs directly to email, OneDrive, or SharePoint. OCR-enabled capture produces searchable PDFs for integration with practice management systems.</p></div>
+        <div class="benefit"><h3>Shared workstation support</h3><p class="muted">Clinicians authenticate via SSO and print to the nearest device regardless of which workstation they are using. Ideal for hot-desking and shared clinical environments.</p></div>
+        <div class="benefit"><h3>No print servers</h3><p class="muted">Remove print servers from clinical environments entirely. Reduce IT overhead, eliminate patching and backup requirements, and simplify the infrastructure clinicians depend on.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Start with a free trial</h2>
+      <p class="muted" style="margin-bottom:24px">30 days, all features, no credit card required.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/pricing" class="btn-secondary">View pricing</a><a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a></div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .usecase-hero{max-width:700px}
+    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .benefit .muted{font-size:14px;line-height:1.7}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}}
+  </style>
+</BaseLayout>

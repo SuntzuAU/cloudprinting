@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+const c = site.colours;
+const extraSchema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Cloud Print Management for Legal -- Printix",
+  "description": "Confidential document handling with secure print release for law firms and legal departments.",
+  "url": site.siteUrl + "/legal",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+}];
+---
+<BaseLayout title="Cloud Print Management for Legal -- Printix" description="Confidential document handling with secure print release for law firms and legal departments. Integrate with document management systems." extraSchema={extraSchema}>
+  <section class="section-pad">
+    <div class="container usecase-hero">
+      <p class="eyebrow">LEGAL</p>
+      <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Secure printing for legal professionals</h1>
+      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:600px">Confidential documents require controlled printing. Printix holds documents until the authorised user releases them at the device, preventing sensitive materials from sitting uncollected on shared printers.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a><a href="/contact" class="btn-secondary">Request a quote</a></div>
+      <p class="muted" style="font-size:13px">Free 30-day trial. All features included.</p>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">Built for legal workflows</h2>
+      <div class="benefit-grid">
+        <div class="benefit"><h3>Secure print release</h3><p class="muted">Hold documents until the user authenticates at the device. Release via app, QR code, NFC tap, or ID badge. No confidential documents left unattended.</p></div>
+        <div class="benefit"><h3>Document confidentiality</h3><p class="muted">Print jobs are encrypted and stored locally on the endpoint until released. Document names are visible only to the document owner. Print data never passes through the cloud.</p></div>
+        <div class="benefit"><h3>DMS workflow integration</h3><p class="muted">Scan from MFDs directly to email, OneDrive, or SharePoint. OCR-enabled capture for searchable PDFs that integrate with document management systems.</p></div>
+        <div class="benefit"><h3>Multi-office management</h3><p class="muted">Manage printers across multiple offices from a single dashboard. Consistent policies, drivers, and security controls regardless of location.</p></div>
+        <div class="benefit"><h3>Audit trails</h3><p class="muted">Centralised reporting with user-level print activity tracking. Useful for client billing reconciliation, compliance reporting, and cost allocation.</p></div>
+        <div class="benefit"><h3>Guest and hot-desk printing</h3><p class="muted">Support visiting professionals and flexible seating arrangements. Users authenticate via SSO and print to the nearest device without reconfiguration.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Start with a free trial</h2>
+      <p class="muted" style="margin-bottom:24px">30 days, all features, no credit card required.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/pricing" class="btn-secondary">View pricing</a><a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a></div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .usecase-hero{max-width:700px}
+    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .benefit .muted{font-size:14px;line-height:1.7}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}}
+  </style>
+</BaseLayout>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../site.config.json';
+const c = site.colours;
+const extraSchema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Cloud Print Management for Education -- Printix",
+  "description": "Staff and faculty licensing with free student access. Campus-wide cloud print management.",
+  "url": site.siteUrl + "/education",
+  "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
+}];
+---
+<BaseLayout title="Cloud Print Management for Education -- Printix" description="Staff and faculty licensing with free student access. Campus-wide secure printing and cost control for Australian schools and universities." extraSchema={extraSchema}>
+  <section class="section-pad">
+    <div class="container usecase-hero">
+      <p class="eyebrow">EDUCATION</p>
+      <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Cloud printing for education</h1>
+      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:600px">Manage printing across campuses, departments, and libraries from a single dashboard. Pay only for staff and faculty users -- student access is included free with an active subscription.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a><a href="/contact" class="btn-secondary">Request a quote</a></div>
+      <p class="muted" style="font-size:13px">Free 30-day trial. All features included.</p>
+    </div>
+  </section>
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:800px">
+      <h2 class="text-center" style="margin-bottom:40px">Built for education environments</h2>
+      <div class="benefit-grid">
+        <div class="benefit"><h3>Students print free</h3><p class="muted">Education institutions pay for staff and faculty users only. Student access is included at no additional cost with an active staff subscription.</p></div>
+        <div class="benefit"><h3>Campus-wide management</h3><p class="muted">Manage printers across multiple buildings, campuses, and libraries from a single cloud dashboard. No print servers on site.</p></div>
+        <div class="benefit"><h3>Cost control and reporting</h3><p class="muted">Track print volumes by department, building, or user. Identify waste, set policies, and produce reports for budget management.</p></div>
+        <div class="benefit"><h3>Secure print release</h3><p class="muted">Hold documents until the user releases them at the device. Prevent uncollected printouts in shared computer labs and libraries.</p></div>
+        <div class="benefit"><h3>Cross-platform support</h3><p class="muted">Students and staff can print from Windows, Mac, Chromebook, iOS, and Android. Support every device on campus without complexity.</p></div>
+        <div class="benefit"><h3>Identity integration</h3><p class="muted">Authenticate with Microsoft Entra ID or Google Workspace. Deploy via endpoint management for zero-touch rollout to institutional devices.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section-pad">
+    <div class="container text-center" style="max-width:600px">
+      <h2 style="margin-bottom:12px">Start with a free trial</h2>
+      <p class="muted" style="margin-bottom:24px">30 days, all features, no credit card required. Contact us for education pricing.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="/pricing" class="btn-secondary">View pricing</a><a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a></div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .usecase-hero{max-width:700px}
+    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
+    .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .benefit .muted{font-size:14px;line-height:1.7}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}}
+  </style>
+</BaseLayout>
