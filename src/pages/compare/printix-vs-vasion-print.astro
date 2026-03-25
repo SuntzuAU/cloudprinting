@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import site from '../../site.config.json';
+const c = site.colours;
+---
+<BaseLayout title="Printix vs Vasion Print -- Cloud Print Management Comparison" description="Compare Printix and Vasion Print (formerly PrinterLogic) for serverless cloud print management. Feature and architecture comparison.">
+  <section class="section-pad">
+    <div class="container" style="max-width:800px">
+      <p class="eyebrow">COMPARE</p>
+      <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Printix vs Vasion Print</h1>
+      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:40px">Both Printix and Vasion Print (formerly PrinterLogic) position themselves as serverless cloud print management solutions. This comparison covers the key architectural and feature differences.</p>
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead><tr><th>Feature</th><th>Printix</th><th>Vasion Print</th></tr></thead>
+          <tbody>
+            <tr><td>Architecture</td><td>Cloud-native SaaS</td><td>Cloud or on-premise (hybrid options)</td></tr>
+            <tr><td>Print servers</td><td>Eliminated entirely</td><td>Eliminated (direct IP)</td></tr>
+            <tr><td>Secure print release</td><td>App, QR, NFC, ID badge via Printix Go</td><td>Badge, PIN, proximity via partner integrations</td></tr>
+            <tr><td>Platform support</td><td>Windows, Mac, Chromebook, iOS, Android</td><td>Windows, Mac, Chromebook, Linux</td></tr>
+            <tr><td>Scan/capture</td><td>Built-in with OCR</td><td>Available in some configurations</td></tr>
+            <tr><td>SSO integration</td><td>Entra ID, Google, Okta, OneLogin</td><td>Entra ID, Okta, SAML providers</td></tr>
+            <tr><td>Deployment</td><td>SaaS only -- no on-premise option</td><td>Cloud SaaS, on-premise, or hybrid</td></tr>
+            <tr><td>Pricing model</td><td>Per-user, all features included</td><td>Enterprise / quote-based</td></tr>
+            <tr><td>MFD embedded apps</td><td>Printix Go on major MFD brands</td><td>Partner-dependent</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 style="margin-top:40px;margin-bottom:16px">Key differences</h2>
+      <p class="muted" style="line-height:1.7;margin-bottom:16px">Both products eliminate traditional print servers and use direct IP printing. The main differentiation is in deployment flexibility and pricing approach. Vasion Print offers on-premise and hybrid deployment options that may suit organisations with specific data sovereignty or air-gapped network requirements. Printix is SaaS-only, which simplifies deployment but requires cloud connectivity for management.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:16px">Printix includes all features at every pricing tier with transparent per-user pricing published on their website. Vasion Print typically uses enterprise quote-based pricing, which may suit larger organisations but makes cost comparison more difficult for mid-size buyers.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:16px">Organisations that want a purely cloud-native approach with simple per-user pricing may find Printix more straightforward. Organisations that need on-premise deployment options or have complex hybrid requirements may want to evaluate Vasion Print alongside Printix.</p>
+      <p class="muted" style="font-size:13px;margin-top:32px;font-style:italic">This comparison is based on publicly available information as of March 2026. Features and pricing may change. Verify current details with each vendor before making purchasing decisions.</p>
+    </div>
+  </section>
+  <section class="section-pad section-dark" style="padding:60px 0">
+    <div class="container text-center">
+      <h2 style="margin-bottom:12px">Try Printix free for 30 days</h2>
+      <p class="muted" style="margin-bottom:24px">All features included. No credit card required.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a><a href="/contact" class="btn-secondary" style="border-color:rgba(255,255,255,0.3);color:#fff">Request a quote</a></div>
+    </div>
+  </section>
+  <style is:inline>
+    .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .comparison-table-wrap{overflow-x:auto}.comparison-table{width:100%;border-collapse:collapse;font-size:14px}.comparison-table th,.comparison-table td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border)}.comparison-table th{font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;background:var(--neutral)}
+  </style>
+</BaseLayout>
