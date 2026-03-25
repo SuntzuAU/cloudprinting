@@ -1,0 +1,23 @@
+{
+  "_readme": "Per-site link usage tracker. Rebuilt automatically by GitHub Actions after every merge. Do not edit manually.",
+  "thisSite": "cloudprinting.au",
+  "internal": [],
+  "externalCoverage": {
+    "voicerecognition.com.au": 0,
+    "pdfsoftware.com.au": 0,
+    "dragonprofessional16.com.au": 0,
+    "dragonnaturallyspeaking.com.au": 0,
+    "dictationsolutions.com.au": 0,
+    "dragonmedicalone.au": 0,
+    "speechrecognition.cloud": 0
+  },
+  "anchorsUsed": {
+    "voicerecognition.com.au": [],
+    "pdfsoftware.com.au": [],
+    "dragonprofessional16.com.au": [],
+    "dragonnaturallyspeaking.com.au": [],
+    "dictationsolutions.com.au": [],
+    "dragonmedicalone.au": [],
+    "speechrecognition.cloud": []
+  }
+}
