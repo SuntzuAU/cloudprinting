@@ -1,0 +1,1 @@
+{\n  "name": "cloudprinting",\n  "type": "module",\n  "version": "1.0.0",\n  "scripts": {\n    "dev": "astro dev",\n    "start": "astro dev",\n    "build": "astro build",\n    "preview": "astro preview",\n    "astro": "astro"\n  },\n  "dependencies": {\n    "astro": "^4.16.0"\n  }\n}\n
