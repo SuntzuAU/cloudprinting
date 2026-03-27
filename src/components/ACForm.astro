@@ -1,7 +1,6 @@
 ---
 // ActiveCampaign Form 295 - Cloud Printing Australia
-// Exact copy of dp16 ACForm.astro reference pattern
-// Changed: form ID (295), or UUID, button colour (orange #EA580C)
+// Full embed including validation JavaScript
 ---
 <div class="formbox">
   <div style="font-weight:800;font-size:20px;color:#0f172a;margin-bottom:4px">Get in touch</div>
@@ -163,7 +162,6 @@
     var form_to_submit = document.getElementById('_form_295_');
     if (!form_to_submit) return;
     var allInputs = form_to_submit.querySelectorAll('input, select, textarea');
-    var submitted = false;
 
     var validate_field = function(elem, remove) {
       var value = elem.value, no_error = true;
@@ -175,7 +173,7 @@
         }
       }
       if (no_error && elem.name == 'email') {
-        if (!value.match(/^[\+_a-z0-9-'&=]+(\.[[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)) {
+        if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)) {
           elem.className = elem.className + ' _has_error';
           no_error = false;
         }
