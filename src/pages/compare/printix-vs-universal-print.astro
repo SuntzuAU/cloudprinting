@@ -3,33 +3,55 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import site from '../../site.config.json';
 const c = site.colours;
 ---
-<BaseLayout title="Printix vs Microsoft Universal Print -- Comparison" description="Compare Printix and Microsoft Universal Print for cloud print management. Feature comparison and architecture differences for Australian organisations.">
+<BaseLayout title="Printix vs Microsoft Universal Print -- Comparison" description="Compare Printix and Microsoft Universal Print for cloud print management. Architecture, deployment approach, and how they work together for Australian organisations.">
   <section class="section-pad">
     <div class="container" style="max-width:800px">
       <p class="eyebrow">COMPARE</p>
       <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Printix vs Microsoft Universal Print</h1>
-      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:40px">Both Printix and Microsoft Universal Print offer cloud-based print management. They can also work together -- many organisations use Printix as a feature layer on top of Universal Print infrastructure.</p>
-      <div class="comparison-table-wrap">
-        <table class="comparison-table">
-          <thead><tr><th>Feature</th><th>Printix</th><th>Universal Print</th></tr></thead>
-          <tbody>
-            <tr><td>Print data routing</td><td>Direct IP -- jobs stay on local network</td><td>Jobs route through Microsoft cloud</td></tr>
-            <tr><td>Secure print release</td><td>App, QR code, NFC, ID badge</td><td>Limited (PIN-based via partner solutions)</td></tr>
-            <tr><td>Platform support</td><td>Windows, Mac, Chromebook, iOS, Android</td><td>Windows 10/11 (primary), limited Mac</td></tr>
-            <tr><td>Driver management</td><td>Cloud driver store, automated</td><td>Universal Print-ready printers or connectors</td></tr>
-            <tr><td>Scan/capture</td><td>Built-in with OCR</td><td>Not included</td></tr>
-            <tr><td>Remote printing</td><td>Built-in, no VPN</td><td>Cloud-routed by default</td></tr>
-            <tr><td>Non-Microsoft identity</td><td>Google, Okta, OneLogin</td><td>Entra ID only</td></tr>
-            <tr><td>Standalone product</td><td>Yes</td><td>Requires Microsoft 365 E3/E5 or add-on</td></tr>
-            <tr><td>Printer compatibility</td><td>Any printer (IPP, RAW, LPR)</td><td>Universal Print-ready or via connector</td></tr>
-          </tbody>
-        </table>
+      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:40px">Printix and Microsoft Universal Print are both cloud-based print services designed to reduce reliance on traditional print servers. They take different approaches to architecture, platform coverage, and feature packaging. Importantly, they can also work together: many organisations use Printix to extend Universal Print with additional capabilities such as direct IP printing and broader device support.</p>
+
+      <h2 style="margin-top:40px;margin-bottom:16px">Universal Print at a glance</h2>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Microsoft Universal Print is a cloud-based print service integrated into the Microsoft 365 ecosystem. It provides core cloud print infrastructure including cloud-hosted print queues, centralised printer management through the Microsoft 365 admin centre, and integration with Entra ID for identity and access control. Universal Print is included with certain Microsoft 365 licence tiers and is also available as a standalone add-on.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Universal Print uses a job-based usage model with pooled monthly print job allowances that vary by licence type, with additional volume available as paid add-ons. The platform supports Universal Print-ready printers natively, and older printers can be connected via a connector component. Capabilities continue to expand through Microsoft's ongoing development and partner ecosystem integrations.</p>
+
+      <h2 style="margin-top:40px;margin-bottom:16px">Printix at a glance</h2>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Printix is a cloud-native print management platform from Tungsten Automation, designed as a standalone SaaS product with all features included at every pricing tier. Printix emphasises direct IP printing where print jobs stay on the local network, a cloud-based driver store for automated driver and queue management, and built-in secure print release via mobile app, QR code, NFC, or ID badge through the Printix Go embedded experience.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Printix supports Windows, Mac, Chromebook, iOS, and Android devices. Identity integration spans Entra ID, Google Workspace, Okta, and OneLogin. Printix includes native capture and scanning workflows with OCR-enabled digitisation to destinations such as Email, OneDrive, and SharePoint Online. Pricing is per-user subscription based on active users, with published entry pricing and volume-based enterprise plans.</p>
+
+      <h2 style="margin-top:40px;margin-bottom:16px">Where each platform is typically preferred</h2>
+      <div class="compare-cards">
+        <div class="compare-card">
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;color:var(--brand)">Printix may suit organisations that</h3>
+          <ul class="compare-list">
+            <li>Need cross-platform support beyond Windows, including Mac, Chromebook, and mobile devices</li>
+            <li>Prefer print jobs to stay on the local network via direct IP printing</li>
+            <li>Want built-in secure print release as a native feature (app, QR, NFC, badge)</li>
+            <li>Require integrated scanning and capture workflows with OCR</li>
+            <li>Use identity providers beyond Microsoft Entra ID, such as Google Workspace, Okta, or OneLogin</li>
+            <li>Want per-user subscription pricing with all features included and no job-volume limits</li>
+          </ul>
+        </div>
+        <div class="compare-card">
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;color:var(--brand)">Universal Print may suit organisations that</h3>
+          <ul class="compare-list">
+            <li>Are deeply invested in the Microsoft 365 ecosystem and want tight integration</li>
+            <li>Already hold Microsoft 365 licences that include Universal Print allowances</li>
+            <li>Prefer Microsoft-managed infrastructure with Entra ID as the primary identity provider</li>
+            <li>Want a first-party Microsoft solution as part of a broader cloud strategy</li>
+            <li>Are willing to extend functionality through Microsoft's partner solution ecosystem</li>
+          </ul>
+        </div>
       </div>
-      <h2 style="margin-top:40px;margin-bottom:16px">Key differences</h2>
-      <p class="muted" style="line-height:1.7;margin-bottom:16px">The most significant difference is how print data travels. Printix routes print jobs directly to printers on the local network -- data never leaves the local environment. Universal Print routes jobs through the Microsoft cloud, which may be a consideration for organisations with strict data residency or sovereignty requirements.</p>
-      <p class="muted" style="line-height:1.7;margin-bottom:16px">Printix supports cross-platform printing including Mac, Chromebook, iOS, and Android alongside Windows. Universal Print primarily supports Windows 10/11 devices.</p>
-      <p class="muted" style="line-height:1.7;margin-bottom:16px">Organisations already invested in Microsoft 365 E3/E5 may have Universal Print included in their licensing. Printix can extend Universal Print with direct IP printing, broader platform support, and secure release workflows.</p>
-      <p class="muted" style="font-size:13px;margin-top:32px;font-style:italic">This comparison is based on publicly available information as of March 2026. Features and pricing may change. Verify current details with each vendor before making purchasing decisions.</p>
+
+      <h2 style="margin-top:40px;margin-bottom:16px">Using Printix and Universal Print together</h2>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Printix positions itself as complementary to Universal Print. Organisations that already have Universal Print through their Microsoft 365 licensing can use Printix to extend capabilities with direct IP printing (keeping jobs on the local network), broader cross-platform device support, secure print release workflows, and capture and scanning features. This approach allows organisations to build on their existing Microsoft investment while addressing requirements that may fall outside Universal Print's current scope.</p>
+
+      <h2 style="margin-top:40px;margin-bottom:16px">Key considerations</h2>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">The platforms differ in commercial model. Universal Print uses a job-volume allowance system tied to Microsoft 365 licensing, with paid add-ons for additional volume. Printix uses per-user subscription pricing based on active users, with all features included regardless of tier. The right model depends on printing volume patterns, existing licensing, and the breadth of print management features required.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Both platforms continue to evolve. Microsoft regularly expands Universal Print's capabilities, and the partner ecosystem extends its reach further. Organisations should evaluate current feature sets and roadmaps from both vendors when making decisions.</p>
+
+      <p class="muted compare-disclaimer" style="font-size:13px;margin-top:32px;font-style:italic">This comparison is based on publicly available information and general product positioning. Features and capabilities may vary depending on configuration, licensing, and deployment. Verify current details directly with each vendor before making purchasing decisions.</p>
+      <p class="muted compare-disclaimer" style="font-size:13px;margin-top:12px;font-style:italic">Microsoft and Universal Print are trademarks of Microsoft Corporation. This site is not affiliated with or endorsed by Microsoft. Printix is a product of Tungsten Automation.</p>
     </div>
   </section>
   <section class="section-pad section-dark" style="padding:60px 0">
@@ -41,6 +63,11 @@ const c = site.colours;
   </section>
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
-    .comparison-table-wrap{overflow-x:auto}.comparison-table{width:100%;border-collapse:collapse;font-size:14px}.comparison-table th,.comparison-table td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border)}.comparison-table th{font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;background:var(--neutral)}
+    .compare-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .compare-card{background:var(--neutral);border-radius:12px;padding:28px}
+    .compare-list{list-style:none;padding:0}
+    .compare-list li{position:relative;padding-left:20px;font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:8px}
+    .compare-list li::before{content:'\2713';position:absolute;left:0;color:var(--brand);font-weight:700}
+    @media(max-width:768px){.compare-cards{grid-template-columns:1fr}}
   </style>
 </BaseLayout>
