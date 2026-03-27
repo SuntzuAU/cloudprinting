@@ -3,38 +3,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import site from '../../site.config.json';
 const c = site.colours;
 ---
-<BaseLayout title="Printix vs PaperCut -- Cloud Print Management Comparison" description="Compare Printix and PaperCut cloud print management platforms. Architecture, deployment approach, and positioning for Australian organisations.">
+<BaseLayout title="Printix vs PaperCut -- Cloud Print Management Comparison" description="Compare Printix and PaperCut cloud print management platforms. Architecture, native features, deployment approach, and positioning for Australian organisations.">
   <section class="section-pad">
-    <div class="container" style="max-width:800px">
+    <div class="container" style="max-width:860px">
       <p class="eyebrow">COMPARE</p>
       <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Printix vs PaperCut</h1>
-      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:40px">Printix and PaperCut are both established cloud print management platforms used by organisations worldwide. Both offer serverless printing, cloud-based administration, secure print release, and broad device support. The differences lie in product architecture, deployment philosophy, and how each platform approaches feature packaging and pricing.</p>
+      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:40px">Printix and PaperCut are both established cloud print management platforms used by organisations worldwide. While both address print management, they differ in architecture and platform scope. PaperCut spans multiple products across cloud-native and self-hosted models, while Printix delivers functionality through a single SaaS platform with all features included natively.</p>
 
       <h2 style="margin-top:40px;margin-bottom:16px">Printix at a glance</h2>
-      <p class="muted" style="line-height:1.7;margin-bottom:12px">Printix is a cloud-native print management platform designed from the ground up as a single SaaS product. All features are included at every pricing tier, with volume-based discounts determined by user count. Printix emphasises simplified deployment with no on-premise server infrastructure required, cloud-based driver management, and built-in support for remote and hybrid printing without VPN configuration.</p>
-      <p class="muted" style="line-height:1.7;margin-bottom:12px">Secure print release is available via mobile app, QR code, NFC, or ID badge. The management interface is a cloud web dashboard, and identity integration supports Entra ID, Google Workspace, Okta, and OneLogin. Platform support covers Windows, Mac, Chromebook, iOS, and Android.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Printix is a cloud-native print management platform from Tungsten Automation, designed as a single SaaS product where all capabilities are delivered natively. There are no add-on tiers, no feature gating, and no separate products to evaluate. Serverless print infrastructure means print processing happens locally on endpoints -- print data stays on the local network and is never transferred to a central server.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">A cloud-based driver store automates driver and queue deployment across Windows, Mac, and Chromebook endpoints, often reducing print-related support tickets and onboarding time. Secure print release is built in natively via the Printix App (mobile/web with QR and NFC selection) and Printix Go -- an embedded experience available on major MFD brands including Brother, Canon, Epson, FUJIFILM, HP, Konica Minolta, Kyocera, Lexmark, Ricoh, and Xerox. Identity integration supports Entra ID, Google Workspace, Okta, and OneLogin.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Capture and scanning workflows with OCR-enabled digitisation to Email, OneDrive, and SharePoint Online are included as native features -- not a separate product or add-on. Pricing is per active user (billed only for users who log in during the billing cycle), with all features included regardless of tier.</p>
 
       <h2 style="margin-top:40px;margin-bottom:16px">PaperCut at a glance</h2>
       <p class="muted" style="line-height:1.7;margin-bottom:12px">PaperCut offers a range of print management products spanning cloud-native and self-hosted deployment models. PaperCut Hive is a cloud-native, serverless SaaS solution with driverless printing, cloud administration, secure print release, and support for Entra ID and Google Workspace identity providers. PaperCut MF is a feature-rich, self-hosted platform available for on-premise or cloud-hosted server deployment, offering advanced reporting, granular policy controls, and deep integration with multifunction devices.</p>
-      <p class="muted" style="line-height:1.7;margin-bottom:12px">This range gives organisations flexibility to choose a deployment model that matches their environment, from fully cloud-managed to self-hosted with maximum configuration control. PaperCut products support Windows, Mac, Linux, Chromebook, iOS, and Android devices.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">This range gives organisations flexibility to choose a deployment model that matches their environment, from fully cloud-managed to self-hosted with maximum configuration control. PaperCut products support Windows, Mac, Linux, Chromebook, iOS, and Android devices. PaperCut itself notes that organisations needing advanced features not currently available in Hive should consider PaperCut MF.</p>
 
       <h2 style="margin-top:40px;margin-bottom:16px">Where each platform is typically preferred</h2>
       <div class="compare-cards">
-        <div class="compare-card">
-          <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;color:var(--brand)">Printix may suit organisations that</h3>
-          <ul class="compare-list">
-            <li>Want a single cloud-native product with all features included at every tier</li>
-            <li>Prioritise removing on-premise print server infrastructure entirely</li>
-            <li>Need straightforward remote and hybrid printing without VPN setup</li>
-            <li>Prefer per-user subscription pricing with predictable costs</li>
-            <li>Value rapid deployment and minimal ongoing IT administration</li>
+        <div class="compare-card card-printix">
+          <h3 class="card-heading-printix">Printix may suit organisations that</h3>
+          <ul class="compare-list list-printix">
+            <li>Want a single cloud-native product with all features included natively -- no separate tiers, products, or add-ons to evaluate</li>
+            <li>Prioritise streamlined deployment with fewer moving parts, particularly in cloud-first environments</li>
+            <li>Need native secure print release across 10+ MFD brands via Printix Go embedded experience</li>
+            <li>Require built-in capture and scanning workflows with OCR as a core feature, not a separate product</li>
+            <li>Prefer per-active-user billing so they only pay for users who actually print</li>
+            <li>Want automated driver and queue management through a centralised cloud driver store</li>
           </ul>
         </div>
-        <div class="compare-card">
-          <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;color:var(--brand)">PaperCut may suit organisations that</h3>
-          <ul class="compare-list">
-            <li>Want flexibility to choose between cloud-native (Hive) or self-hosted (MF) deployment</li>
-            <li>Require advanced reporting, granular policy controls, or deep MFD integration</li>
+        <div class="compare-card card-competitor">
+          <h3 class="card-heading-competitor">PaperCut may suit organisations that</h3>
+          <ul class="compare-list list-competitor">
+            <li>Want flexibility to choose between cloud-native (Hive) or self-hosted (MF) deployment models</li>
+            <li>Require advanced reporting, granular policy controls, or deep MFD integration available in PaperCut MF</li>
             <li>Have existing PaperCut deployments and invested infrastructure</li>
             <li>Need Linux server support or highly customised print workflows</li>
             <li>Prefer tiered product options with different feature sets at different price points</li>
@@ -42,9 +44,32 @@ const c = site.colours;
         </div>
       </div>
 
+      <div class="why-printix">
+        <h2 style="margin-bottom:16px">Why organisations choose Printix</h2>
+        <p style="line-height:1.7;margin-bottom:16px">While both platforms provide core print management capabilities, organisations often choose Printix when they prioritise a unified, cloud-native platform with native functionality and simplified deployment, rather than combining multiple components or evaluating across several product tiers.</p>
+        <div class="why-grid">
+          <div class="why-item">
+            <strong>Single platform, everything included</strong>
+            <p>Printix delivers secure release, driver automation, capture with OCR, and cross-platform support as native features within one SaaS product. There is no need to assess which tier or product includes the functionality you need.</p>
+          </div>
+          <div class="why-item">
+            <strong>Streamlined deployment</strong>
+            <p>Organisations seeking a streamlined deployment with fewer moving parts often prefer Printix. The cloud driver store, automated queue configuration, and self-service patterns can reduce print-related support tickets and accelerate onboarding in many environments.</p>
+          </div>
+          <div class="why-item">
+            <strong>Predictable, transparent pricing</strong>
+            <p>Per-active-user billing means organisations pay only for users who log in during the billing cycle, with all features included regardless of volume. Published entry pricing and no per-page or per-device charges typically simplify budgeting.</p>
+          </div>
+          <div class="why-item">
+            <strong>Broad secure release</strong>
+            <p>Printix Go is available natively on major MFD brands including Brother, Canon, Epson, FUJIFILM, HP, Konica Minolta, Kyocera, Lexmark, Ricoh, and Xerox -- enabling card, ID code, QR, and NFC release workflows as built-in capabilities.</p>
+          </div>
+        </div>
+      </div>
+
       <h2 style="margin-top:40px;margin-bottom:16px">Key considerations</h2>
-      <p class="muted" style="line-height:1.7;margin-bottom:12px">Both platforms offer cloud-based administration, secure print release, and identity provider integration. The primary distinction is architectural philosophy: Printix delivers all capabilities through a single cloud-native product, while PaperCut provides a portfolio of products (Hive, Pocket, MF, NG) designed for different organisational requirements and deployment preferences.</p>
-      <p class="muted" style="line-height:1.7;margin-bottom:12px">Pricing models differ: Printix uses per-user subscription pricing with all features included, while PaperCut pricing varies by product tier and typically uses per-device licensing for MF/NG or per-user pricing for Hive. Organisations should request current pricing from each vendor, as models and rates may change.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Printix delivers all capabilities through a single cloud-native product, while PaperCut provides a portfolio of products (Hive, Pocket, MF, NG) designed for different organisational requirements and deployment preferences. The right choice often depends on whether an organisation values a unified platform with native features or prefers the flexibility of multiple products that can be selected and combined based on specific needs.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Pricing models differ. Printix uses per-active-user subscription pricing with all features included. PaperCut pricing varies by product tier, with Hive typically priced per MFD via reseller and Pocket priced per unique active user. Organisations should request current pricing from each vendor, as models and rates may change.</p>
 
       <p class="muted compare-disclaimer" style="font-size:13px;margin-top:32px;font-style:italic">This comparison is based on publicly available information and general product positioning as of March 2026. Features, capabilities, and pricing may vary depending on configuration, version, and deployment model. Verify current details directly with each vendor before making purchasing decisions.</p>
       <p class="muted compare-disclaimer" style="font-size:13px;margin-top:12px;font-style:italic">PaperCut is a registered trademark of PaperCut Software International Pty Ltd. This site is not affiliated with or endorsed by PaperCut. Printix is a product of Tungsten Automation.</p>
@@ -53,17 +78,30 @@ const c = site.colours;
   <section class="section-pad section-dark" style="padding:60px 0">
     <div class="container text-center">
       <h2 style="margin-bottom:12px">Try Printix free for 30 days</h2>
-      <p class="muted" style="margin-bottom:24px">All features included. No credit card required.</p>
+      <p class="muted" style="margin-bottom:24px">All features included. No credit card required. Deploy to your first printer in minutes.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a><a href="/contact" class="btn-secondary" style="border-color:rgba(255,255,255,0.3);color:#fff">Request a quote</a></div>
     </div>
   </section>
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
     .compare-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
-    .compare-card{background:var(--neutral);border-radius:12px;padding:28px}
+    .card-printix{background:linear-gradient(135deg,#0891B2 0%,#0E7490 100%);border-radius:12px;padding:28px;color:#fff}
+    .card-competitor{background:var(--neutral);border-radius:12px;padding:28px}
+    .card-heading-printix{font-size:18px;font-weight:700;margin-bottom:12px;color:#fff}
+    .card-heading-competitor{font-size:18px;font-weight:700;margin-bottom:12px;color:var(--muted)}
     .compare-list{list-style:none;padding:0}
-    .compare-list li{position:relative;padding-left:20px;font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:8px}
-    .compare-list li::before{content:'\2713';position:absolute;left:0;color:var(--brand);font-weight:700}
-    @media(max-width:768px){.compare-cards{grid-template-columns:1fr}}
+    .compare-list li{position:relative;padding-left:20px;font-size:15px;line-height:1.7;margin-bottom:8px}
+    .list-printix li{color:rgba(255,255,255,0.92)}
+    .list-printix li::before{content:'\2713';position:absolute;left:0;color:#22D3EE;font-weight:700}
+    .list-competitor li{color:var(--muted)}
+    .list-competitor li::before{content:'\2713';position:absolute;left:0;color:var(--muted);font-weight:700}
+    .why-printix{margin-top:48px;background:linear-gradient(135deg,#ECFEFF 0%,#F0FDFA 100%);border-radius:16px;padding:36px;border:1px solid #A5F3FC}
+    .why-printix h2{color:#0E7490}
+    .why-printix>p{color:#115E59}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+    .why-item{background:#fff;border-radius:10px;padding:20px;border:1px solid #E0F2FE}
+    .why-item strong{display:block;font-size:15px;font-weight:700;color:#0E7490;margin-bottom:6px}
+    .why-item p{font-size:14px;line-height:1.6;color:#475569;margin:0}
+    @media(max-width:768px){.compare-cards{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}}
   </style>
 </BaseLayout>
