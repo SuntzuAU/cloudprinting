@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ACForm from '../components/ACForm.astro';
+import site from '../site.config.json';
+const c = site.colours;
+---
+<BaseLayout>
+  <section class="section-pad">
+    <div class="container" style="max-width:800px">
+      <h1 style="font-size:clamp(28px,4vw,40px);font-weight:800;text-align:center;margin-bottom:12px;letter-spacing:-0.02em">Customer stories</h1>
+      <p class="text-center muted" style="margin-bottom:48px;max-width:560px;margin-left:auto;margin-right:auto">Organisations around the world rely on Printix to eliminate print servers, simplify management, and reduce costs. Here is what they have to say.</p>
+    </div>
+  </section>
+
+  <!-- AUTHORITY BADGES -->
+  <section class="section-pad section-dark">
+    <div class="container" style="text-align:center;max-width:900px">
+      <div class="authority-grid">
+        <div class="authority-badge">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="4" width="28" height="24" rx="3" stroke="#22D3EE" stroke-width="1.5" fill="none"/><path d="M10 16h12M10 20h8M10 12h12" stroke="#22D3EE" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span class="authority-title">IDC MarketScape Leader</span>
+          <span class="authority-sub">Named a leader in print management for hybrid cloud capabilities</span>
+        </div>
+        <div class="authority-badge">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 2l4 8 9 1.3-6.5 6.3 1.5 9L16 22.3 8 26.6l1.5-9L3 11.3 12 10l4-8z" stroke="#22D3EE" stroke-width="1.5" fill="none"/></svg>
+          <span class="authority-title">Microsoft Preferred Solution</span>
+          <span class="authority-sub">Recognised in the Microsoft Azure Marketplace</span>
+        </div>
+        <div class="authority-badge">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 3l10 4.5v7c0 6.6-4.3 12.4-10 14.5C10.3 26.9 6 21.1 6 14.5v-7L16 3z" stroke="#22D3EE" stroke-width="1.5" fill="none"/><path d="M11 16l3 3 7-7" stroke="#22D3EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="authority-title">Google Enterprise Recommended</span>
+          <span class="authority-sub">Verified integration with Google Workspace</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section-pad section-neutral">
+    <div class="container" style="max-width:900px">
+      <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">First-class support and fantastic communications. The flexibility to accommodate specific enterprise requirements makes Printix stand out.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Mats Weckhorst</span>
+            <span class="testimonial-role">Subject Matter Expert, End User Computing</span>
+            <span class="testimonial-company">Elkjop Nordic AS</span>
+            <span class="testimonial-sector">Enterprise retail</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Many users had been waiting for exactly this kind of solution, and now have access to cloud-based print services from any location worldwide.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Kjersti Lutnes</span>
+            <span class="testimonial-role">Group IT Infrastructure &amp; Operations Manager</span>
+            <span class="testimonial-company">Jotun</span>
+            <span class="testimonial-sector">Enterprise manufacturing</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Printing from remote sites used to be complicated and time-consuming. Now users can print directly from their own desktop or mobile device in a single click.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Chad Grahek</span>
+            <span class="testimonial-role">Director</span>
+            <span class="testimonial-company">Grahek Technology</span>
+            <span class="testimonial-sector">Managed services</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">By far the best product for fully cloud-based organisations. Managed to solve every printing problem in the organisation single-handedly.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Robert Crawford</span>
+            <span class="testimonial-role">Network &amp; Systems Administrator</span>
+            <span class="testimonial-company">St. Tammany Fire District 13</span>
+            <span class="testimonial-sector">Government / emergency services</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Users do not even notice they are using Printix. End-user acceptability and adoption was completely seamless.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Brian Thogersen</span>
+            <span class="testimonial-role">IT Infrastructure Manager</span>
+            <span class="testimonial-company">Nordic Aviation Capital</span>
+            <span class="testimonial-sector">Aviation / enterprise</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">The cloud printing capability is elegant and seamless, and straightforward to deploy. A potential game-changer for clients looking to modernise print infrastructure.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Rob Fullwood</span>
+            <span class="testimonial-role">Director</span>
+            <span class="testimonial-company">IQPC</span>
+            <span class="testimonial-sector">Business / consulting</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Solved the last hurdle to going fully serverless. Reduced monthly printing and licensing costs, introduced secure printing, and simplified printer management across Microsoft Azure infrastructure.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Tom Ferguson</span>
+            <span class="testimonial-role">ICT Technician</span>
+            <span class="testimonial-company">Renhold VC Primary School</span>
+            <span class="testimonial-sector">Education</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Deployed to a school right before their term start and have not had a single printing issue related to drivers or accessing printers. Saves time and money even at smaller sites because management is so straightforward.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Matthias D. Kittok</span>
+            <span class="testimonial-role">Vice President</span>
+            <span class="testimonial-company">Superior Endeavors, Inc.</span>
+            <span class="testimonial-sector">Managed services / education</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">A thorough market analysis led to choosing Printix for serverless cloud-based print management. Makes it easy for users across multiple locations to set default printers or use secure print release from their smartphone.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Frank Johansen</span>
+            <span class="testimonial-role">CTO &amp; Product Director</span>
+            <span class="testimonial-company">Metier OEC</span>
+            <span class="testimonial-sector">Professional services</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">From an architecture and usability perspective, truly the best software we have ever used. Print serverless, easy to deploy, and managing 30-plus sites without visiting each one saves enormous time.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Matthew Frost</span>
+            <span class="testimonial-role">Managing Partner and CTO</span>
+            <span class="testimonial-company">UPTIC IO</span>
+            <span class="testimonial-sector">Cloud / DevOps MSP</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">A model cloud-based IT environment was the goal. This infrastructure included Microsoft 365 and, critically, a modern print solution to match.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Kjell Espen Leirvaag</span>
+            <span class="testimonial-role">Leader IT Operations</span>
+            <span class="testimonial-company">Spordrift</span>
+            <span class="testimonial-sector">Sports / facilities</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Printix works unbelievably well. Printing used to be a struggle, now it is genuinely enjoyable. The only regret is not finding it sooner.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Johnny Goetschalckx</span>
+            <span class="testimonial-role">System Administrator</span>
+            <span class="testimonial-company">ETAP</span>
+            <span class="testimonial-sector">Engineering</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-pad section-dark" id="contact">
+    <div class="container">
+      <div class="cta-form-layout">
+        <div class="cta-form-text">
+          <h2 style="color:#fff;margin-bottom:12px">Ready to simplify your print management?</h2>
+          <p style="color:var(--dark-muted);font-size:16px;line-height:1.7;margin-bottom:24px">Start your free 30-day trial or request a quote. Australian-based support from Voice Recognition Australia.</p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap">
+            <a href="https://printix.net/printix-trial" class="btn-primary">Start free trial</a>
+            <a href="/contact" class="btn-secondary" style="border-color:rgba(255,255,255,0.3);color:#fff">Contact us</a>
+          </div>
+        </div>
+        <div class="cta-form-box">
+          <ACForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:inline>
+    .authority-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .authority-badge{display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px;text-align:center}
+    .authority-title{font-size:15px;font-weight:600;color:var(--dark-text)}
+    .authority-sub{font-size:13px;color:var(--dark-muted);line-height:1.5}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .testimonial-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;display:flex;flex-direction:column}
+    .testimonial-quote{font-size:15px;color:var(--text);line-height:1.7;margin-bottom:20px;flex:1;font-style:italic}
+    .testimonial-quote::before{content:open-quote;font-size:28px;color:var(--brand);font-weight:700;line-height:0;vertical-align:-8px;margin-right:4px}
+    .testimonial-author{border-top:1px solid var(--border);padding-top:16px;display:flex;flex-direction:column;gap:2px}
+    .testimonial-name{font-size:14px;font-weight:600;color:var(--text)}
+    .testimonial-role{font-size:13px;color:var(--muted)}
+    .testimonial-company{font-size:13px;color:var(--brand);font-weight:500}
+    .testimonial-sector{font-size:12px;color:var(--muted);font-style:italic}
+    .cta-form-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .cta-form-box .formbox{background:#fff;border-radius:16px;padding:28px;box-shadow:0 8px 32px rgba(0,0,0,0.15)}
+    @media(max-width:768px){.authority-grid{grid-template-columns:1fr}.testimonial-grid{grid-template-columns:1fr}.cta-form-layout{grid-template-columns:1fr}}
+  </style>
+</BaseLayout>
