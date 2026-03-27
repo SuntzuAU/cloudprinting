@@ -2,13 +2,22 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import site from '../../site.config.json';
 const c = site.colours;
+const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 ---
 <BaseLayout title="Printix vs Microsoft Universal Print -- Comparison" description="Compare Printix and Microsoft Universal Print for cloud print management. Native features, deployment approach, and how they work together for Australian organisations.">
   <section class="section-pad">
     <div class="container" style="max-width:860px">
-      <p class="eyebrow">COMPARE</p>
-      <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Printix vs Microsoft Universal Print</h1>
-      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:40px">Printix and Microsoft Universal Print are both cloud-based print services designed to reduce reliance on traditional print servers. While both address print management, they differ in architecture and platform scope. Universal Print provides cloud print infrastructure integrated into the Microsoft 365 ecosystem, while Printix delivers functionality through a single SaaS platform with all features included natively. Importantly, they can work together: many organisations use Printix to extend Universal Print with additional capabilities.</p>
+      <div class="hero-split">
+        <div>
+          <p class="eyebrow">COMPARE</p>
+          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Printix vs Microsoft Universal Print</h1>
+          <p class="muted" style="font-size:16px;line-height:1.7">Printix and Microsoft Universal Print are both cloud-based print services designed to reduce reliance on traditional print servers. While both address print management, they differ in architecture and platform scope. Universal Print provides cloud print infrastructure integrated into the Microsoft 365 ecosystem, while Printix delivers functionality through a single SaaS platform with all features included natively. Importantly, they can work together.</p>
+        </div>
+        <div class="hero-img-wrap">
+          <!-- IMAGE 1: Hero image - generate and upload to R2 as cloudprinting/compare/printix-vs-universal-print-hero.jpg -->
+          <img src={`${R2}/cloudprinting/compare/printix-vs-universal-print-hero.jpg`} alt="Cloud print management comparison between Printix and Microsoft Universal Print" width="480" height="320" loading="eager" decoding="async" class="hero-img" />
+        </div>
+      </div>
 
       <h2 style="margin-top:40px;margin-bottom:16px">Printix at a glance</h2>
       <p class="muted" style="line-height:1.7;margin-bottom:12px">Printix is a cloud-native print management platform from Tungsten Automation -- a standalone SaaS product with all features included natively at every pricing tier. Direct IP printing keeps jobs on the local network. A cloud-based driver store automates driver and queue management. Secure print release is built in via the Printix App (mobile/web with QR and NFC) and Printix Go -- embedded on major MFD brands including Brother, Canon, Epson, FUJIFILM, HP, Konica Minolta, Kyocera, Lexmark, Ricoh, and Xerox.</p>
@@ -42,18 +51,6 @@ const c = site.colours;
           </ul>
         </div>
       </div>
-
-      <div class="complement-section">
-        <h2 style="margin-bottom:12px">Using Printix and Universal Print together</h2>
-        <p style="line-height:1.7">Printix positions itself as complementary to Universal Print. Organisations that already have Universal Print through their Microsoft 365 licensing can use Printix to extend capabilities with direct IP printing, broader cross-platform device support, native secure print release workflows, and integrated capture and scanning features. This allows organisations to build on their existing Microsoft investment while addressing requirements that may fall outside Universal Print's current scope.</p>
-      </div>
-
-      <div class="why-printix">
-        <h2 style="margin-bottom:12px">Why organisations choose Printix</h2>
-        <p style="line-height:1.7;margin-bottom:12px">While both platforms provide cloud print capabilities, organisations often choose Printix when they need native functionality delivered through a single SaaS product, rather than relying on additional components or partner integrations to achieve similar outcomes.</p>
-        <p style="line-height:1.7;margin-bottom:12px">Printix provides key capabilities such as secure print release across 10+ MFD brands, automated driver management, cross-platform support, and capture with OCR as native features within one application. Universal Print provides core cloud print infrastructure that is often extended through Microsoft's partner ecosystem, depending on organisational requirements.</p>
-        <p style="line-height:1.7">This distinction can influence deployment complexity, ongoing administration, and how features are packaged and licensed across environments.</p>
-      </div>
     </div>
   </section>
 
@@ -71,7 +68,24 @@ const c = site.colours;
 
   <section class="section-pad">
     <div class="container" style="max-width:860px">
-      <h2 style="margin-bottom:16px">Key considerations</h2>
+      <div class="complement-section">
+        <h2 style="margin-bottom:12px">Using Printix and Universal Print together</h2>
+        <p style="line-height:1.7">Printix positions itself as complementary to Universal Print. Organisations that already have Universal Print through their Microsoft 365 licensing can use Printix to extend capabilities with direct IP printing, broader cross-platform device support, native secure print release workflows, and integrated capture and scanning features. This allows organisations to build on their existing Microsoft investment while addressing requirements that may fall outside Universal Print's current scope.</p>
+      </div>
+
+      <div class="why-printix" style="margin-top:40px">
+        <h2 style="margin-bottom:12px">Why organisations choose Printix</h2>
+        <p style="line-height:1.7;margin-bottom:12px">While both platforms provide cloud print capabilities, organisations often choose Printix when they need native functionality delivered through a single SaaS product, rather than relying on additional components or partner integrations to achieve similar outcomes.</p>
+        <p style="line-height:1.7;margin-bottom:12px">Printix provides key capabilities such as secure print release across 10+ MFD brands, automated driver management, cross-platform support, and capture with OCR as native features within one application. Universal Print provides core cloud print infrastructure that is often extended through Microsoft's partner ecosystem, depending on organisational requirements.</p>
+        <p style="line-height:1.7">This distinction can influence deployment complexity, ongoing administration, and how features are packaged and licensed across environments.</p>
+      </div>
+
+      <div class="break-img-wrap">
+        <!-- IMAGE 2: Mid-page break image - generate and upload to R2 as cloudprinting/compare/printix-secure-print-release-mfd.jpg -->
+        <img src={`${R2}/cloudprinting/compare/printix-secure-print-release-mfd.jpg`} alt="Printix Go secure print release on a multifunction device touchscreen" width="860" height="400" loading="lazy" decoding="async" class="break-img" />
+      </div>
+
+      <h2 style="margin-top:40px;margin-bottom:16px">Key considerations</h2>
       <p class="muted" style="line-height:1.7;margin-bottom:12px">The platforms differ in commercial model. Universal Print uses a job-volume allowance system tied to Microsoft 365 licensing, with paid add-ons for additional volume. Printix uses per-active-user subscription pricing with all features included regardless of tier. The right model depends on printing volume patterns, existing licensing, and the breadth of print management features required.</p>
       <p class="muted" style="line-height:1.7;margin-bottom:12px">Both platforms continue to evolve. Microsoft regularly expands Universal Print's capabilities, and the partner ecosystem extends its reach further. Organisations should evaluate current feature sets and roadmaps from both vendors when making decisions.</p>
 
@@ -89,6 +103,11 @@ const c = site.colours;
   </section>
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:0}
+    .hero-img-wrap{border-radius:12px;overflow:hidden}
+    .hero-img{width:100%;height:auto;border-radius:12px;object-fit:cover}
+    .break-img-wrap{margin:40px 0;border-radius:12px;overflow:hidden}
+    .break-img{width:100%;height:auto;border-radius:12px;object-fit:cover}
     .compare-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
     .card-printix{background:linear-gradient(135deg,#0891B2 0%,#0E7490 100%);border-radius:12px;padding:28px;color:#fff}
     .card-competitor{background:var(--neutral);border-radius:12px;padding:28px}
@@ -100,15 +119,15 @@ const c = site.colours;
     .list-printix li::before{content:'\2713';position:absolute;left:0;color:#22D3EE;font-weight:700}
     .list-competitor li{color:var(--muted)}
     .list-competitor li::before{content:'\2713';position:absolute;left:0;color:var(--muted);font-weight:700}
-    .complement-section{margin-top:40px;background:#F0F9FF;border-radius:12px;padding:28px;border:1px solid #BAE6FD}
+    .complement-section{background:#F0F9FF;border-radius:12px;padding:28px;border:1px solid #BAE6FD}
     .complement-section h2{color:#0E7490}
     .complement-section p{color:#1E3A5F;margin:0}
-    .why-printix{margin-top:40px;background:linear-gradient(135deg,#ECFEFF 0%,#F0FDFA 100%);border-radius:16px;padding:32px;border:1px solid #A5F3FC}
+    .why-printix{background:linear-gradient(135deg,#ECFEFF 0%,#F0FDFA 100%);border-radius:16px;padding:32px;border:1px solid #A5F3FC}
     .why-printix h2{color:#0E7490}
     .why-printix p{color:#115E59;margin:0}
     .why-printix p+p{margin-top:12px}
     .mid-cta{background:linear-gradient(135deg,#0891B2 0%,#0E7490 100%);padding:48px 0;margin:0}
     .mid-cta h2{font-size:clamp(22px,3vw,30px)}
-    @media(max-width:768px){.compare-cards{grid-template-columns:1fr}}
+    @media(max-width:768px){.compare-cards{grid-template-columns:1fr}.hero-split{grid-template-columns:1fr}}
   </style>
 </BaseLayout>

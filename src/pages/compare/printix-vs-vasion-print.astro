@@ -2,13 +2,22 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import site from '../../site.config.json';
 const c = site.colours;
+const R2 = import.meta.env.PUBLIC_R2_BASE || '';
 ---
 <BaseLayout title="Printix vs Vasion Print -- Cloud Print Management Comparison" description="Compare Printix and Vasion Print for serverless cloud print management. Platform scope, native features, deployment approach, and positioning for Australian organisations.">
   <section class="section-pad">
     <div class="container" style="max-width:860px">
-      <p class="eyebrow">COMPARE</p>
-      <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Printix vs Vasion Print</h1>
-      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:40px">Printix and Vasion Print (formerly PrinterLogic) both offer cloud-based, serverless print management designed to eliminate traditional print servers. While both address print server elimination and direct IP printing, they differ significantly in platform scope, deployment flexibility, and how they package functionality. Printix is a dedicated print management platform, while Vasion Print is the print component of a broader automation and document processing platform.</p>
+      <div class="hero-split">
+        <div>
+          <p class="eyebrow">COMPARE</p>
+          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Printix vs Vasion Print</h1>
+          <p class="muted" style="font-size:16px;line-height:1.7">Printix and Vasion Print (formerly PrinterLogic) both offer cloud-based, serverless print management designed to eliminate traditional print servers. While both address print server elimination and direct IP printing, they differ significantly in platform scope, deployment flexibility, and how they package functionality. Printix is a dedicated print management platform, while Vasion Print is the print component of a broader automation and document processing platform.</p>
+        </div>
+        <div class="hero-img-wrap">
+          <!-- IMAGE 1: Hero image - generate and upload to R2 as cloudprinting/compare/printix-vs-vasion-print-hero.jpg -->
+          <img src={`${R2}/cloudprinting/compare/printix-vs-vasion-print-hero.jpg`} alt="Cloud print management comparison between Printix and Vasion Print" width="480" height="320" loading="eager" decoding="async" class="hero-img" />
+        </div>
+      </div>
 
       <h2 style="margin-top:40px;margin-bottom:16px">Printix at a glance</h2>
       <p class="muted" style="line-height:1.7;margin-bottom:12px">Printix is a dedicated cloud-native print management platform from Tungsten Automation -- focused specifically on print infrastructure, secure release, driver and queue management, and capture workflows. All delivered natively within a single SaaS product. No separate modules, no add-on tiers, no adjacent platform products to evaluate.</p>
@@ -44,13 +53,6 @@ const c = site.colours;
           </ul>
         </div>
       </div>
-
-      <div class="why-printix">
-        <h2 style="margin-bottom:12px">Why organisations choose Printix</h2>
-        <p style="line-height:1.7;margin-bottom:12px">While both platforms address print server elimination, organisations often choose Printix when they prioritise a dedicated, cloud-native print management platform with native functionality and simplified deployment, rather than evaluating print management as one component within a broader platform suite.</p>
-        <p style="line-height:1.7;margin-bottom:12px">Printix provides key capabilities such as secure print release across 10+ MFD brands, automated driver management, cross-platform support, and capture with OCR as native features within one SaaS application. Vasion Print delivers print management as part of a broader platform that also addresses workflow automation and document processing, which may involve evaluating additional components depending on organisational requirements.</p>
-        <p style="line-height:1.7">This distinction can influence deployment complexity, ongoing administration, and how features are packaged and licensed across environments.</p>
-      </div>
     </div>
   </section>
 
@@ -68,7 +70,19 @@ const c = site.colours;
 
   <section class="section-pad">
     <div class="container" style="max-width:860px">
-      <h2 style="margin-bottom:16px">Key considerations</h2>
+      <div class="why-printix">
+        <h2 style="margin-bottom:12px">Why organisations choose Printix</h2>
+        <p style="line-height:1.7;margin-bottom:12px">While both platforms address print server elimination, organisations often choose Printix when they prioritise a dedicated, cloud-native print management platform with native functionality and simplified deployment, rather than evaluating print management as one component within a broader platform suite.</p>
+        <p style="line-height:1.7;margin-bottom:12px">Printix provides key capabilities such as secure print release across 10+ MFD brands, automated driver management, cross-platform support, and capture with OCR as native features within one SaaS application. Vasion Print delivers print management as part of a broader platform that also addresses workflow automation and document processing, which may involve evaluating additional components depending on organisational requirements.</p>
+        <p style="line-height:1.7">This distinction can influence deployment complexity, ongoing administration, and how features are packaged and licensed across environments.</p>
+      </div>
+
+      <div class="break-img-wrap">
+        <!-- IMAGE 2: Mid-page break image - generate and upload to R2 as cloudprinting/compare/printix-driver-store-queue-management.jpg -->
+        <img src={`${R2}/cloudprinting/compare/printix-driver-store-queue-management.jpg`} alt="Printix cloud driver store and automated queue management interface" width="860" height="400" loading="lazy" decoding="async" class="break-img" />
+      </div>
+
+      <h2 style="margin-top:40px;margin-bottom:16px">Key considerations</h2>
       <p class="muted" style="line-height:1.7;margin-bottom:12px">The most significant difference between these platforms is scope and focus. Printix is a dedicated print management product delivering all capabilities through a single SaaS application. Vasion Print is the print management component of a broader platform that also addresses workflow automation and document processing. Organisations should consider whether they need a focused print solution with native features or a broader platform that includes print management alongside other capabilities.</p>
       <p class="muted" style="line-height:1.7;margin-bottom:12px">Deployment models also differ. Printix is cloud SaaS only, which often simplifies operations in cloud-first environments. Vasion Print offers cloud, on-premise, and hybrid deployment, providing flexibility for environments with specific infrastructure or compliance constraints.</p>
       <p class="muted" style="line-height:1.7;margin-bottom:12px">Pricing models differ and should be confirmed directly with each vendor. Printix publishes per-active-user subscription pricing with all features included. Vasion Print typically uses enterprise or quote-based pricing that may vary depending on platform scope, deployment model, and organisational requirements.</p>
@@ -87,6 +101,11 @@ const c = site.colours;
   </section>
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+    .hero-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:0}
+    .hero-img-wrap{border-radius:12px;overflow:hidden}
+    .hero-img{width:100%;height:auto;border-radius:12px;object-fit:cover}
+    .break-img-wrap{margin:40px 0;border-radius:12px;overflow:hidden}
+    .break-img{width:100%;height:auto;border-radius:12px;object-fit:cover}
     .compare-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
     .card-printix{background:linear-gradient(135deg,#0891B2 0%,#0E7490 100%);border-radius:12px;padding:28px;color:#fff}
     .card-competitor{background:var(--neutral);border-radius:12px;padding:28px}
@@ -98,12 +117,12 @@ const c = site.colours;
     .list-printix li::before{content:'\2713';position:absolute;left:0;color:#22D3EE;font-weight:700}
     .list-competitor li{color:var(--muted)}
     .list-competitor li::before{content:'\2713';position:absolute;left:0;color:var(--muted);font-weight:700}
-    .why-printix{margin-top:40px;background:linear-gradient(135deg,#ECFEFF 0%,#F0FDFA 100%);border-radius:16px;padding:32px;border:1px solid #A5F3FC}
+    .why-printix{background:linear-gradient(135deg,#ECFEFF 0%,#F0FDFA 100%);border-radius:16px;padding:32px;border:1px solid #A5F3FC}
     .why-printix h2{color:#0E7490}
     .why-printix p{color:#115E59;margin:0}
     .why-printix p+p{margin-top:12px}
     .mid-cta{background:linear-gradient(135deg,#0891B2 0%,#0E7490 100%);padding:48px 0;margin:0}
     .mid-cta h2{font-size:clamp(22px,3vw,30px)}
-    @media(max-width:768px){.compare-cards{grid-template-columns:1fr}}
+    @media(max-width:768px){.compare-cards{grid-template-columns:1fr}.hero-split{grid-template-columns:1fr}}
   </style>
 </BaseLayout>
