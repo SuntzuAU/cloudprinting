@@ -3,33 +3,54 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import site from '../../site.config.json';
 const c = site.colours;
 ---
-<BaseLayout title="Printix vs Vasion Print -- Cloud Print Management Comparison" description="Compare Printix and Vasion Print (formerly PrinterLogic) for serverless cloud print management. Feature and architecture comparison.">
+<BaseLayout title="Printix vs Vasion Print -- Cloud Print Management Comparison" description="Compare Printix and Vasion Print for serverless cloud print management. Platform scope, deployment approach, and positioning for Australian organisations.">
   <section class="section-pad">
     <div class="container" style="max-width:800px">
       <p class="eyebrow">COMPARE</p>
       <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Printix vs Vasion Print</h1>
-      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:40px">Both Printix and Vasion Print (formerly PrinterLogic) position themselves as serverless cloud print management solutions. This comparison covers the key architectural and feature differences.</p>
-      <div class="comparison-table-wrap">
-        <table class="comparison-table">
-          <thead><tr><th>Feature</th><th>Printix</th><th>Vasion Print</th></tr></thead>
-          <tbody>
-            <tr><td>Architecture</td><td>Cloud-native SaaS</td><td>Cloud or on-premise (hybrid options)</td></tr>
-            <tr><td>Print servers</td><td>Eliminated entirely</td><td>Eliminated (direct IP)</td></tr>
-            <tr><td>Secure print release</td><td>App, QR, NFC, ID badge via Printix Go</td><td>Badge, PIN, proximity via partner integrations</td></tr>
-            <tr><td>Platform support</td><td>Windows, Mac, Chromebook, iOS, Android</td><td>Windows, Mac, Chromebook, Linux</td></tr>
-            <tr><td>Scan/capture</td><td>Built-in with OCR</td><td>Available in some configurations</td></tr>
-            <tr><td>SSO integration</td><td>Entra ID, Google, Okta, OneLogin</td><td>Entra ID, Okta, SAML providers</td></tr>
-            <tr><td>Deployment</td><td>SaaS only -- no on-premise option</td><td>Cloud SaaS, on-premise, or hybrid</td></tr>
-            <tr><td>Pricing model</td><td>Per-user, all features included</td><td>Enterprise / quote-based</td></tr>
-            <tr><td>MFD embedded apps</td><td>Printix Go on major MFD brands</td><td>Partner-dependent</td></tr>
-          </tbody>
-        </table>
+      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:40px">Printix and Vasion Print (formerly PrinterLogic) both offer cloud-based, serverless print management designed to eliminate traditional print servers. While both platforms address print server elimination and direct IP printing, they differ in platform scope, deployment flexibility, and how they package functionality. Understanding these differences can help organisations evaluate which approach aligns with their requirements.</p>
+
+      <h2 style="margin-top:40px;margin-bottom:16px">Vasion Print at a glance</h2>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Vasion Print is the print management component of Vasion's broader cloud-native platform, which also encompasses workflow automation, document processing, and content management capabilities. For print management specifically, Vasion Print emphasises serverless architecture, direct IP printing that keeps jobs on the local network, centralised management, and secure release functionality.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Vasion Print offers deployment flexibility spanning cloud SaaS, on-premise, and hybrid models. This range may suit organisations with specific data sovereignty, air-gapped network, or regulatory requirements that necessitate on-premise infrastructure. Identity integration includes Entra ID, Okta, and SAML-based providers. Platform support covers Windows, Mac, Chromebook, and Linux devices.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Because Vasion Print sits within a broader platform, organisations evaluating it may find additional capabilities in scanning, digitisation, and workflow automation available through the wider Vasion product suite, depending on configuration and licensing.</p>
+
+      <h2 style="margin-top:40px;margin-bottom:16px">Printix at a glance</h2>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Printix is a dedicated cloud-native print management platform from Tungsten Automation, designed as a single SaaS product focused specifically on print infrastructure, secure release, driver and queue management, and capture workflows. All features are included at every pricing tier, with per-user subscription pricing based on active users and published entry-level rates.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Printix emphasises simplicity of deployment and administration. Print jobs stay on the local network via direct IP printing, drivers are managed through a cloud-based driver store with automated deployment, and secure print release is delivered natively through the Printix App and Printix Go embedded experience across major MFD brands. Platform support covers Windows, Mac, Chromebook, iOS, and Android, with identity integration spanning Entra ID, Google Workspace, Okta, and OneLogin. Capture and scanning workflows with OCR-enabled digitisation are included as native features.</p>
+
+      <h2 style="margin-top:40px;margin-bottom:16px">Where each platform is typically preferred</h2>
+      <div class="compare-cards">
+        <div class="compare-card">
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;color:var(--brand)">Printix may suit organisations that</h3>
+          <ul class="compare-list">
+            <li>Want a dedicated, focused print management platform with all features included in a single SaaS product</li>
+            <li>Prioritise simple deployment and minimal ongoing administration</li>
+            <li>Prefer transparent per-user subscription pricing with published entry rates</li>
+            <li>Need native secure print release via app, QR code, NFC, and ID badge across major MFD brands</li>
+            <li>Require built-in capture and scanning workflows with OCR as a core feature</li>
+            <li>Need iOS and Android mobile device support alongside desktop platforms</li>
+          </ul>
+        </div>
+        <div class="compare-card">
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;color:var(--brand)">Vasion Print may suit organisations that</h3>
+          <ul class="compare-list">
+            <li>Want print management as part of a broader workflow automation and document processing platform</li>
+            <li>Require on-premise or hybrid deployment options alongside cloud SaaS</li>
+            <li>Have data sovereignty or air-gapped network requirements that necessitate local infrastructure</li>
+            <li>Need Linux endpoint support in addition to Windows, Mac, and Chromebook</li>
+            <li>Prefer to consolidate print, workflow automation, and content management under a single vendor</li>
+          </ul>
+        </div>
       </div>
-      <h2 style="margin-top:40px;margin-bottom:16px">Key differences</h2>
-      <p class="muted" style="line-height:1.7;margin-bottom:16px">Both products eliminate traditional print servers and use direct IP printing. The main differentiation is in deployment flexibility and pricing approach. Vasion Print offers on-premise and hybrid deployment options that may suit organisations with specific data sovereignty or air-gapped network requirements. Printix is SaaS-only, which simplifies deployment but requires cloud connectivity for management.</p>
-      <p class="muted" style="line-height:1.7;margin-bottom:16px">Printix includes all features at every pricing tier with transparent per-user pricing published on their website. Vasion Print typically uses enterprise quote-based pricing, which may suit larger organisations but makes cost comparison more difficult for mid-size buyers.</p>
-      <p class="muted" style="line-height:1.7;margin-bottom:16px">Organisations that want a purely cloud-native approach with simple per-user pricing may find Printix more straightforward. Organisations that need on-premise deployment options or have complex hybrid requirements may want to evaluate Vasion Print alongside Printix.</p>
-      <p class="muted" style="font-size:13px;margin-top:32px;font-style:italic">This comparison is based on publicly available information as of March 2026. Features and pricing may change. Verify current details with each vendor before making purchasing decisions.</p>
+
+      <h2 style="margin-top:40px;margin-bottom:16px">Key considerations</h2>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">The most significant difference between these platforms is scope and focus. Printix is a dedicated print management product delivering all capabilities through a single SaaS application. Vasion Print is the print management component of a broader platform that also addresses workflow automation and document processing. Organisations should consider whether they need a focused print solution or a broader platform that includes print management alongside other capabilities.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Deployment models also differ. Printix is cloud SaaS only, which simplifies operations but requires cloud connectivity for administration. Vasion Print offers cloud, on-premise, and hybrid deployment, providing flexibility for environments with specific infrastructure or compliance constraints.</p>
+      <p class="muted" style="line-height:1.7;margin-bottom:12px">Pricing models differ and should be confirmed directly with each vendor. Printix publishes per-user subscription pricing with all features included. Vasion Print typically uses enterprise or quote-based pricing that may vary depending on platform scope, deployment model, and organisational requirements.</p>
+
+      <p class="muted compare-disclaimer" style="font-size:13px;margin-top:32px;font-style:italic">This comparison is based on publicly available information and general product positioning. Features and capabilities may vary depending on configuration, licensing, and deployment. Verify current details directly with each vendor before making purchasing decisions.</p>
+      <p class="muted compare-disclaimer" style="font-size:13px;margin-top:12px;font-style:italic">Vasion and Vasion Print are trademarks of their respective owner. This site is not affiliated with or endorsed by Vasion. Printix is a product of Tungsten Automation.</p>
     </div>
   </section>
   <section class="section-pad section-dark" style="padding:60px 0">
@@ -41,6 +62,11 @@ const c = site.colours;
   </section>
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
-    .comparison-table-wrap{overflow-x:auto}.comparison-table{width:100%;border-collapse:collapse;font-size:14px}.comparison-table th,.comparison-table td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border)}.comparison-table th{font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;background:var(--neutral)}
+    .compare-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .compare-card{background:var(--neutral);border-radius:12px;padding:28px}
+    .compare-list{list-style:none;padding:0}
+    .compare-list li{position:relative;padding-left:20px;font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:8px}
+    .compare-list li::before{content:'\2713';position:absolute;left:0;color:var(--brand);font-weight:700}
+    @media(max-width:768px){.compare-cards{grid-template-columns:1fr}}
   </style>
 </BaseLayout>
