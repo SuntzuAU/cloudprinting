@@ -17,6 +17,51 @@
     "contentType": "image/jpeg",
     "site": "cloudprinting"
   },
+  "usecase-government": {
+    "key": "usecase-government",
+    "r2Key": "cloudprinting/2026/03/31/printix-usecase-government-1f55f38d.jpg",
+    "altText": "Government professional using secure cloud print management in an Australian government office",
+    "aspectRatio": "1:1",
+    "slot": "usecase-government",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  },
+  "usecase-enterprise": {
+    "key": "usecase-enterprise",
+    "r2Key": "cloudprinting/2026/03/31/printix-usecase-enterprise-09cddded.jpg",
+    "altText": "Enterprise professional in a modern corporate office with cloud-managed printing",
+    "aspectRatio": "1:1",
+    "slot": "usecase-enterprise",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  },
+  "usecase-legal": {
+    "key": "usecase-legal",
+    "r2Key": "cloudprinting/2026/03/31/printix-usecase-legal-1085434d.jpg",
+    "altText": "Legal professional using secure document printing in an Australian law firm",
+    "aspectRatio": "1:1",
+    "slot": "usecase-legal",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  },
+  "usecase-medical": {
+    "key": "usecase-medical",
+    "r2Key": "cloudprinting/2026/03/31/printix-usecase-medical-80f2fad9.jpg",
+    "altText": "Clinician using cloud print management in an Australian medical practice",
+    "aspectRatio": "1:1",
+    "slot": "usecase-medical",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  },
+  "usecase-education": {
+    "key": "usecase-education",
+    "r2Key": "cloudprinting/2026/03/31/printix-usecase-education-e00901ad.jpg",
+    "altText": "University staff member using cloud print management in an Australian campus library",
+    "aspectRatio": "1:1",
+    "slot": "usecase-education",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  },
   "enterprise-break": {
     "key": "enterprise-break",
     "r2Key": "cloudprinting/Best-Cloud-Printing-for-Enterprise.jpg",
