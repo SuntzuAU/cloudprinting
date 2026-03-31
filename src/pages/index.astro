@@ -2,8 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ACForm from '../components/ACForm.astro';
 import site from '../site.config.json';
+import manifest from '../data/image-manifest.json';
 const c = site.colours;
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+function imgSrc(key) {
+  const entry = manifest[key];
+  if (!entry?.r2Key || !R2) return '';
+  return `${R2.replace(/\/$/, '')}/${entry.r2Key}`;
+}
+function imgAlt(key) {
+  return manifest[key]?.altText || key;
+}
 
 const productSchema = {
   "@context": "https://schema.org",
@@ -52,7 +62,10 @@ const extraSchema = [productSchema, faqSchema];
         <p class="hero-micro">{site.hero.microcopy}</p>
       </div>
       <div class="hero-visual">
-        <img src={`${R2}/cloudprinting/cloud-printing-hero.jpg`} alt="Cloud print management for Australian business with Printix" loading="eager" class="hero-img" />
+        {imgSrc('hero')
+          ? <img src={imgSrc('hero')} alt={imgAlt('hero')} loading="eager" class="hero-img" />
+          : <div style="width:100%;aspect-ratio:16/9;background:#e2e8f0;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:14px">Hero image</div>
+        }
       </div>
     </div>
   </section>
@@ -94,11 +107,13 @@ const extraSchema = [productSchema, faqSchema];
   </section>
 
   <!-- 5b. IMAGE BREAK -->
-  <section style="padding:0">
-    <div class="container" style="padding-top:48px;padding-bottom:48px">
-      <img src={`${R2}/cloudprinting/Best-Cloud-Printing-for-Enterprise.jpg`} alt="Modern enterprise office environment with cloud-managed printing infrastructure" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:16px;display:block" />
-    </div>
-  </section>
+  {imgSrc('enterprise-break') && (
+    <section style="padding:0">
+      <div class="container" style="padding-top:48px;padding-bottom:48px">
+        <img src={imgSrc('enterprise-break')} alt={imgAlt('enterprise-break')} loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:16px;display:block" />
+      </div>
+    </section>
+  )}
 
   <!-- 6. FEATURES -->
   <section class="section-pad" id="features">

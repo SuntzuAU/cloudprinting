@@ -1,8 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import site from '../../site.config.json';
+import manifest from '../../data/image-manifest.json';
 const c = site.colours;
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+function imgSrc(key) {
+  const entry = manifest[key];
+  if (!entry?.r2Key || !R2) return '';
+  return `${R2.replace(/\/$/, '')}/${entry.r2Key}`;
+}
+function imgAlt(key) {
+  return manifest[key]?.altText || key;
+}
 ---
 <BaseLayout title="Printix vs PaperCut -- Cloud Print Management Comparison" description="Compare Printix and PaperCut cloud print management platforms. Architecture, native features, deployment approach, and positioning for Australian organisations.">
   <section class="section-pad">
@@ -14,7 +24,10 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
           <p class="muted" style="font-size:16px;line-height:1.7">Printix and PaperCut are both established cloud print management platforms. While both address print management, they differ in architecture and platform scope. PaperCut spans multiple products across cloud-native and self-hosted models, while Printix delivers functionality through a single SaaS platform with all features included natively.</p>
         </div>
         <div class="hero-img-wrap">
-          <img src={`${R2}/cloudprinting/cloud-printing-enterrprise-hero.jpg`} alt="Cloud print management comparison between Printix and PaperCut" width="480" height="320" loading="eager" decoding="async" class="hero-img" />
+          {imgSrc('compare-papercut-hero')
+            ? <img src={imgSrc('compare-papercut-hero')} alt={imgAlt('compare-papercut-hero')} width="480" height="320" loading="eager" decoding="async" class="hero-img" />
+            : <div style="width:100%;aspect-ratio:16/9;background:#e2e8f0;border-radius:12px"></div>
+          }
         </div>
       </div>
 
@@ -74,9 +87,11 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
         <p style="line-height:1.7">This distinction can influence deployment complexity, ongoing administration, and how features are packaged and licensed across environments.</p>
       </div>
 
-      <div class="break-img-wrap">
-        <img src={`${R2}/cloudprinting/cloud-printing-papercut-break.jpg`} alt="Professional collecting a document from a printer in a modern cloud-managed office environment" width="860" height="400" loading="lazy" decoding="async" class="break-img" />
-      </div>
+      {imgSrc('compare-papercut-break') && (
+        <div class="break-img-wrap">
+          <img src={imgSrc('compare-papercut-break')} alt={imgAlt('compare-papercut-break')} width="860" height="400" loading="lazy" decoding="async" class="break-img" />
+        </div>
+      )}
 
       <h2 style="margin-top:40px;margin-bottom:16px">Key considerations</h2>
       <p class="muted" style="line-height:1.7;margin-bottom:12px">Printix delivers all capabilities through a single cloud-native product, while PaperCut provides a portfolio of products (Hive, Pocket, MF, NG) designed for different requirements and deployment preferences. The right choice often depends on whether an organisation values a unified platform with native features or prefers the flexibility of multiple products that can be combined based on specific needs.</p>

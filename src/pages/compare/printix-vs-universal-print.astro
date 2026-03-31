@@ -1,8 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import site from '../../site.config.json';
+import manifest from '../../data/image-manifest.json';
 const c = site.colours;
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+function imgSrc(key) {
+  const entry = manifest[key];
+  if (!entry?.r2Key || !R2) return '';
+  return `${R2.replace(/\/$/, '')}/${entry.r2Key}`;
+}
+function imgAlt(key) {
+  return manifest[key]?.altText || key;
+}
 ---
 <BaseLayout title="Printix vs Microsoft Universal Print -- Comparison" description="Compare Printix and Microsoft Universal Print for cloud print management. Native features, deployment approach, and how they work together for Australian organisations.">
   <section class="section-pad">
@@ -14,7 +24,10 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
           <p class="muted" style="font-size:16px;line-height:1.7">Printix and Microsoft Universal Print are both cloud-based print services designed to reduce reliance on traditional print servers. While both address print management, they differ in architecture and platform scope. Universal Print provides cloud print infrastructure integrated into the Microsoft 365 ecosystem, while Printix delivers functionality through a single SaaS platform with all features included natively. Importantly, they can work together.</p>
         </div>
         <div class="hero-img-wrap">
-          <img src={`${R2}/cloudprinting/Microsoft-Universal-Print-Alternatives-Hero.jpg`} alt="Cloud print management comparison between Printix and Microsoft Universal Print" width="480" height="320" loading="eager" decoding="async" class="hero-img" />
+          {imgSrc('compare-universal-print-hero')
+            ? <img src={imgSrc('compare-universal-print-hero')} alt={imgAlt('compare-universal-print-hero')} width="480" height="320" loading="eager" decoding="async" class="hero-img" />
+            : <div style="width:100%;aspect-ratio:16/9;background:#e2e8f0;border-radius:12px"></div>
+          }
         </div>
       </div>
 
@@ -79,9 +92,11 @@ const R2 = import.meta.env.PUBLIC_R2_BASE || '';
         <p style="line-height:1.7">This distinction can influence deployment complexity, ongoing administration, and how features are packaged and licensed across environments.</p>
       </div>
 
-      <div class="break-img-wrap">
-        <img src={`${R2}/cloudprinting/printx-vs-microsoft-universal-print-break.jpg`} alt="Professional using secure print release in a modern cloud-managed office environment" width="860" height="400" loading="lazy" decoding="async" class="break-img" />
-      </div>
+      {imgSrc('compare-universal-print-break') && (
+        <div class="break-img-wrap">
+          <img src={imgSrc('compare-universal-print-break')} alt={imgAlt('compare-universal-print-break')} width="860" height="400" loading="lazy" decoding="async" class="break-img" />
+        </div>
+      )}
 
       <h2 style="margin-top:40px;margin-bottom:16px">Key considerations</h2>
       <p class="muted" style="line-height:1.7;margin-bottom:12px">The platforms differ in commercial model. Universal Print uses a job-volume allowance system tied to Microsoft 365 licensing, with paid add-ons for additional volume. Printix uses per-active-user subscription pricing with all features included regardless of tier. The right model depends on printing volume patterns, existing licensing, and the breadth of print management features required.</p>
