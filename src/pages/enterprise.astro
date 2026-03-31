@@ -1,7 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
+import manifest from '../data/image-manifest.json';
 const c = site.colours;
+const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
+function imgAlt(key) { return manifest[key]?.altText || key; }
 const extraSchema = [{
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -13,12 +17,21 @@ const extraSchema = [{
 ---
 <BaseLayout title="Enterprise Cloud Print Management -- Printix" description="Hybrid cloud print management for multi-site enterprise organisations. Eliminate print servers, unify infrastructure, and reduce IT overhead at scale." extraSchema={extraSchema}>
   <section class="section-pad">
-    <div class="container usecase-hero">
-      <p class="eyebrow">ENTERPRISE</p>
-      <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Cloud print management at scale</h1>
-      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:600px">Replace print servers across every site with a single cloud-managed platform. Printix handles driver management, queue automation, secure release, and reporting for organisations from hundreds to thousands of users.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a><a href="/contact" class="btn-secondary">Request a quote</a></div>
-      <p class="muted" style="font-size:13px">Free 30-day trial. All features included.</p>
+    <div class="container">
+      <div class="usecase-hero-split">
+        <div class="usecase-hero-text">
+          <p class="eyebrow">ENTERPRISE</p>
+          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Cloud print management at scale</h1>
+          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:600px">Replace print servers across every site with a single cloud-managed platform. Printix handles driver management, queue automation, secure release, and reporting for organisations from hundreds to thousands of users.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a><a href="/contact" class="btn-secondary">Request a quote</a></div>
+          <p class="muted" style="font-size:13px">Free 30-day trial. All features included.</p>
+        </div>
+        {imgSrc('usecase-enterprise') && (
+          <div class="usecase-hero-img">
+            <img src={imgSrc('usecase-enterprise')} alt={imgAlt('usecase-enterprise')} loading="eager" decoding="async" />
+          </div>
+        )}
+      </div>
     </div>
   </section>
   <section class="section-pad section-neutral">
@@ -43,11 +56,12 @@ const extraSchema = [{
   </section>
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
-    .usecase-hero{max-width:700px}
+    .usecase-hero-split{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:center}
+    .usecase-hero-img img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;border:1px solid rgba(0,0,0,0.06);box-shadow:0 4px 16px rgba(0,0,0,0.08)}
     .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
     .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
     .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
     .benefit .muted{font-size:14px;line-height:1.7}
-    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}.usecase-hero-img{order:-1}}
   </style>
 </BaseLayout>

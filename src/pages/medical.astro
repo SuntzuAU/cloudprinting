@@ -1,36 +1,49 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../site.config.json';
+import manifest from '../data/image-manifest.json';
 const c = site.colours;
+const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+function imgSrc(key) { const e = manifest[key]; if (!e?.r2Key || !R2) return ''; return `${R2.replace(/\/$/, '')}/${e.r2Key}`; }
+function imgAlt(key) { return manifest[key]?.altText || key; }
 const extraSchema = [{
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Cloud Print Management for Healthcare -- Printix",
-  "description": "Patient privacy through secure print release at MFDs. Multi-clinic cloud print management.",
+  "name": "Cloud Print Management for Medical -- Printix",
+  "description": "Patient privacy through secure release at MFDs. Multi-clinic management from a central dashboard.",
   "url": site.siteUrl + "/medical",
   "isPartOf": { "@type": "WebSite", "name": site.siteName, "url": site.siteUrl }
 }];
 ---
-<BaseLayout title="Cloud Print Management for Healthcare -- Printix" description="Patient privacy through secure print release. Multi-clinic cloud print management for Australian healthcare organisations." extraSchema={extraSchema}>
+<BaseLayout title="Cloud Print Management for Medical -- Printix" description="Patient privacy through secure print release. Multi-clinic cloud print management for Australian medical practices, hospitals, and healthcare organisations." extraSchema={extraSchema}>
   <section class="section-pad">
-    <div class="container usecase-hero">
-      <p class="eyebrow">HEALTHCARE</p>
-      <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Secure printing for healthcare</h1>
-      <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:600px">Patient documents require controlled printing. Printix holds documents until the authorised clinician or administrator releases them at the device, supporting patient privacy and reducing the risk of sensitive information being left on shared printers.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a><a href="/contact" class="btn-secondary">Request a quote</a></div>
-      <p class="muted" style="font-size:13px">Free 30-day trial. All features included.</p>
+    <div class="container">
+      <div class="usecase-hero-split">
+        <div class="usecase-hero-text">
+          <p class="eyebrow">MEDICAL</p>
+          <h1 style="font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:16px">Cloud printing for healthcare</h1>
+          <p class="muted" style="font-size:16px;line-height:1.7;margin-bottom:24px;max-width:600px">Patient documents stay private with secure print release. Manage printers across clinics, wards, and reception areas from a single cloud dashboard without on-site print servers.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px"><a href={site.hero.ctaPrimaryUrl} class="btn-primary">Start free trial</a><a href="/contact" class="btn-secondary">Request a quote</a></div>
+          <p class="muted" style="font-size:13px">Free 30-day trial. All features included.</p>
+        </div>
+        {imgSrc('usecase-medical') && (
+          <div class="usecase-hero-img">
+            <img src={imgSrc('usecase-medical')} alt={imgAlt('usecase-medical')} loading="eager" decoding="async" />
+          </div>
+        )}
+      </div>
     </div>
   </section>
   <section class="section-pad section-neutral">
     <div class="container" style="max-width:800px">
-      <h2 class="text-center" style="margin-bottom:40px">Designed for healthcare environments</h2>
+      <h2 class="text-center" style="margin-bottom:40px">Built for healthcare environments</h2>
       <div class="benefit-grid">
-        <div class="benefit"><h3>Secure print release at MFDs</h3><p class="muted">Hold patient documents until released by the authorised user at the device. Supports Printix Go on MFDs from Brother, Canon, Epson, HP, Konica Minolta, Kyocera, Lexmark, Ricoh, and Xerox.</p></div>
-        <div class="benefit"><h3>Patient privacy</h3><p class="muted">Print jobs encrypted and stored locally until released. Document names visible only to the document owner. Print data never passes through the cloud.</p></div>
-        <div class="benefit"><h3>Multi-clinic management</h3><p class="muted">Manage printers across multiple clinics, wards, and facilities from a single cloud dashboard. Consistent policies and security controls regardless of location.</p></div>
-        <div class="benefit"><h3>Scan to clinical systems</h3><p class="muted">Scan from MFDs directly to email, OneDrive, or SharePoint. OCR-enabled capture produces searchable PDFs for integration with practice management systems.</p></div>
-        <div class="benefit"><h3>Shared workstation support</h3><p class="muted">Clinicians authenticate via SSO and print to the nearest device regardless of which workstation they are using. Ideal for hot-desking and shared clinical environments.</p></div>
-        <div class="benefit"><h3>No print servers</h3><p class="muted">Remove print servers from clinical environments entirely. Reduce IT overhead, eliminate patching and backup requirements, and simplify the infrastructure clinicians depend on.</p></div>
+        <div class="benefit"><h3>Patient privacy</h3><p class="muted">Print jobs held until released at the device. Document names visible only to the document owner. No patient information left on shared printers in waiting areas or wards.</p></div>
+        <div class="benefit"><h3>Multi-clinic management</h3><p class="muted">Manage printers across multiple clinics, hospitals, and satellite locations from a single cloud dashboard. Standardise configurations without visiting each site.</p></div>
+        <div class="benefit"><h3>Secure print release</h3><p class="muted">Release via the Printix app, QR code, NFC tap, or ID badge through Printix Go. Works on shared MFDs in consulting rooms, reception, and ward stations.</p></div>
+        <div class="benefit"><h3>Print data stays local</h3><p class="muted">Print jobs are processed on the local network. Patient documents are never sent through the cloud. Management and policy controls are cloud-based; document data is not.</p></div>
+        <div class="benefit"><h3>Scan to clinical systems</h3><p class="muted">Capture and scan from MFDs directly to email, OneDrive, or SharePoint with OCR. Digitise paper referrals, consent forms, and pathology into searchable PDFs.</p></div>
+        <div class="benefit"><h3>Cross-platform support</h3><p class="muted">Print from Windows, Mac, Chromebook, iOS, and Android. Support every device across clinical, administrative, and reception environments.</p></div>
       </div>
     </div>
   </section>
@@ -43,11 +56,12 @@ const extraSchema = [{
   </section>
   <style is:inline>
     .eyebrow{font-size:12px;font-weight:600;color:var(--brand);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
-    .usecase-hero{max-width:700px}
+    .usecase-hero-split{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:center}
+    .usecase-hero-img img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;border:1px solid rgba(0,0,0,0.06);box-shadow:0 4px 16px rgba(0,0,0,0.08)}
     .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
     .benefit{padding:24px;border:1px solid var(--border);border-radius:14px;background:#fff}
     .benefit h3{font-size:16px;font-weight:600;margin-bottom:8px}
     .benefit .muted{font-size:14px;line-height:1.7}
-    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.benefit-grid{grid-template-columns:1fr}.usecase-hero-split{grid-template-columns:1fr}.usecase-hero-img{order:-1}}
   </style>
 </BaseLayout>
