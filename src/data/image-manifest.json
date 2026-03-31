@@ -10,17 +10,12 @@
   },
   "usecase-image": {
     "key": "usecase-image",
-    "r2Key": "",
+    "r2Key": "cloudprinting/2026/03/31/printix-cloud-printing-who-uses-it-2b03b731.jpg",
     "altText": "Modern cloud-managed multifunction printer in an Australian office environment",
     "aspectRatio": "1:1",
     "slot": "usecase-image",
-    "contentType": "image/png",
-    "site": "cloudprinting",
-    "workerRequest": {
-      "prompt": "Professional photograph, 1:1 square aspect ratio 500x500px. Modern Australian office environment with a cloud-managed multifunction printer, clean workspace, warm natural lighting. No people visible, focus on the printer and clean modern office setting. No text, no logos, no watermarks.",
-      "name": "printix-cloud-printing-who-uses-it",
-      "siteId": "cloudprinting"
-    }
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
   },
   "enterprise-break": {
     "key": "enterprise-break",
