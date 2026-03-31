@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "key": "hero",
+    "r2Key": "cloudprinting/cloud-printing-hero.jpg",
+    "altText": "Cloud print management dashboard for Australian business with Printix",
+    "aspectRatio": "16:9",
+    "slot": "hero",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  },
+  "enterprise-break": {
+    "key": "enterprise-break",
+    "r2Key": "cloudprinting/Best-Cloud-Printing-for-Enterprise.jpg",
+    "altText": "Modern enterprise office environment with cloud-managed printing infrastructure",
+    "aspectRatio": "16:9",
+    "slot": "enterprise-break",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  },
+  "compare-papercut-hero": {
+    "key": "compare-papercut-hero",
+    "r2Key": "cloudprinting/cloud-printing-enterrprise-hero.jpg",
+    "altText": "Cloud print management comparison between Printix and PaperCut for Australian organisations",
+    "aspectRatio": "16:9",
+    "slot": "compare-papercut-hero",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  },
+  "compare-papercut-break": {
+    "key": "compare-papercut-break",
+    "r2Key": "cloudprinting/cloud-printing-papercut-break.jpg",
+    "altText": "Professional collecting a document from a printer in a modern cloud-managed office environment",
+    "aspectRatio": "3:1",
+    "slot": "compare-papercut-break",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  },
+  "compare-universal-print-hero": {
+    "key": "compare-universal-print-hero",
+    "r2Key": "cloudprinting/Microsoft-Universal-Print-Alternatives-Hero.jpg",
+    "altText": "Cloud print management comparison between Printix and Microsoft Universal Print",
+    "aspectRatio": "16:9",
+    "slot": "compare-universal-print-hero",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  },
+  "compare-universal-print-break": {
+    "key": "compare-universal-print-break",
+    "r2Key": "cloudprinting/printx-vs-microsoft-universal-print-break.jpg",
+    "altText": "Professional using secure print release in a modern cloud-managed Australian office",
+    "aspectRatio": "3:1",
+    "slot": "compare-universal-print-break",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  },
+  "compare-vasion-hero": {
+    "key": "compare-vasion-hero",
+    "r2Key": "cloudprinting/cloud-printing-hero-home.jpg",
+    "altText": "Cloud print management comparison between Printix and Vasion Print for Australian organisations",
+    "aspectRatio": "16:9",
+    "slot": "compare-vasion-hero",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  },
+  "compare-vasion-break": {
+    "key": "compare-vasion-break",
+    "r2Key": "cloudprinting/printx-cloud-printing-home-hero.jpg",
+    "altText": "Printix cloud print management platform deployed in a modern Australian office",
+    "aspectRatio": "3:1",
+    "slot": "compare-vasion-break",
+    "contentType": "image/jpeg",
+    "site": "cloudprinting"
+  }
+}
