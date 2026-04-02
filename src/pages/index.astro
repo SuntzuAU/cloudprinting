@@ -57,7 +57,9 @@ const extraSchema = [productSchema, faqSchema];
         </ul>
         <div class="hero-ctas">
           <a href={site.hero.ctaPrimaryUrl} class="btn-primary btn-lg">{site.hero.ctaPrimary}</a>
-          <a href={site.hero.ctaSecondaryUrl} class="btn-secondary">{site.hero.ctaSecondary}</a>
+          {site.hero.ctaSecondary && site.hero.ctaSecondaryUrl && (
+            <a href={site.hero.ctaSecondaryUrl} class="btn-secondary">{site.hero.ctaSecondary}</a>
+          )}
         </div>
         <p class="hero-micro">{site.hero.microcopy}</p>
       </div>
