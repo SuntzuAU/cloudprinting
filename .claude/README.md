@@ -34,7 +34,15 @@ This is an authorised reseller site for Tungsten Printix cloud print management.
 - Compare (dropdown): vs PaperCut, vs Universal Print, vs Vasion
 - Learn
 - Contact
-- CTA: Start free trial (links to printix.net/printix-trial)
+- CTA: "Get Free Trial" (links to /contact -- AC form 295)
+
+## CTA strategy (IMPORTANT)
+- All trial CTAs say "Get Free Trial" and point to /contact (our AC form)
+- NEVER link to printix.net/printix-trial -- we capture the lead, we set up the trial
+- Secondary CTAs on industry/comparison pages say "View pricing" and point to /pricing
+- The hero has a single primary CTA only (no secondary button)
+- Form submit button says "Request Free Trial"
+- AC form ID: 295
 
 ## Rules
 - All content must comply with Australian Consumer Law
