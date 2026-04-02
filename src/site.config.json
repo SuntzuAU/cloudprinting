@@ -6,7 +6,7 @@
   "seoTitle": "Can You Eliminate Print Servers? | Cloud Print Management for Australian Business",
   "seoDescription": "Eliminate print servers with Printix cloud print management. Secure release, central management, hybrid cloud printing for business, government, education and enterprise. Australian authorised reseller.",
   "googleAnalyticsId": "G-5JQ8BG0E6T",
-  "_buildNote": "v1.0.1 - AC form 295 configured",
+  "_buildNote": "v1.0.2 - All trial CTAs now point to /contact form",
 
   "colours": {
     "brand": "#0891B2",
@@ -67,8 +67,8 @@
       { "label": "Printix vs Universal Print", "href": "/compare/printix-vs-universal-print" },
       { "label": "Printix vs Vasion Print", "href": "/compare/printix-vs-vasion-print" }
     ],
-    "ctaText": "Start free trial",
-    "ctaUrl": "https://printix.net/printix-trial"
+    "ctaText": "Get Free Trial",
+    "ctaUrl": "/contact"
   },
 
   "hero": {
@@ -80,10 +80,8 @@
       "Secure print release via app, QR code, or badge.",
       "Windows, Mac, Chromebook, iOS and Android support."
     ],
-    "ctaPrimary": "Start free trial",
-    "ctaPrimaryUrl": "https://printix.net/printix-trial",
-    "ctaSecondary": "Contact us",
-    "ctaSecondaryUrl": "/contact",
+    "ctaPrimary": "Get Free Trial",
+    "ctaPrimaryUrl": "/contact",
     "microcopy": "Free 30-day trial. All features included. No credit card required.",
     "trustLine": "Authorised Tungsten reseller. Voice Recognition Australia -- 25 years deploying enterprise technology across Australian business, government, healthcare and education."
   },
@@ -113,7 +111,7 @@
 
   "features": [
     { "title": "Serverless print infrastructure", "description": "Remove traditional print servers entirely. Printix manages everything from the cloud while print processing stays local on your network." },
-    { "title": "Secure print release", "description": "Hold documents until the user releases them at the device. Release via the Printix app, QR code, NFC, or ID badge through Printix Go." },
+    { "title": "Secure print release", "description": "Hold documents until the user releases them at the device. Release via the Printix app, QR code, NFC, or ID badge using Printix Go." },
     { "title": "Central web-based management", "description": "Configure and control printers, queues, drivers, and policies from a single cloud dashboard. Manage all sites from anywhere." },
     { "title": "Cross-platform support", "description": "Print from Windows, Mac, Chromebook, iOS, and Android. Support every device in your organisation without complexity." },
     { "title": "Driver and queue automation", "description": "Cloud driver store with automated queue and driver installation. Reduce helpdesk tickets and simplify onboarding." },
@@ -138,7 +136,7 @@
   "pricing": {
     "disclaimer": "Pricing in AUD including GST. All plans include all features and integrations with unlimited printers, devices, pages, and locations. Pricing accurate at time of publication.",
     "tiers": [
-      { "name": "15-299 users", "price": "$3.93", "period": "per user/month", "description": "1-year annual subscription. Ideal for small to mid-size organisations.", "features": ["All features included", "Unlimited printers and devices", "Unlimited pages and locations", "Secure print release", "Cloud driver store", "Capture and workflows", "SSO integration", "30-day free trial"], "ctaText": "Start free trial", "ctaUrl": "https://printix.net/printix-trial", "highlighted": true, "badge": "Most common" },
+      { "name": "15-299 users", "price": "$3.93", "period": "per user/month", "description": "1-year annual subscription. Ideal for small to mid-size organisations.", "features": ["All features included", "Unlimited printers and devices", "Unlimited pages and locations", "Secure print release", "Cloud driver store", "Capture and workflows", "SSO integration", "30-day free trial"], "ctaText": "Get Free Trial", "ctaUrl": "/contact", "highlighted": true, "badge": "Most common" },
       { "name": "300-499 users", "price": "$3.45", "period": "per user/month", "description": "1-year annual subscription. Volume pricing for growing organisations.", "features": ["All features included", "Unlimited printers and devices", "Unlimited pages and locations", "Secure print release", "Cloud driver store", "Capture and workflows", "SSO integration", "30-day free trial"], "ctaText": "Request a quote", "ctaUrl": "/contact", "highlighted": false },
       { "name": "500-999 users", "price": "$3.20", "period": "per user/month", "description": "1-year annual subscription.", "features": ["All features included", "Unlimited printers and devices", "Unlimited pages and locations"], "ctaText": "Request a quote", "ctaUrl": "/contact", "highlighted": false },
       { "name": "1,000-2,499 users", "price": "$2.95", "period": "per user/month", "description": "1-year annual subscription.", "features": ["All features included", "Unlimited printers and devices", "Unlimited pages and locations"], "ctaText": "Request a quote", "ctaUrl": "/contact", "highlighted": false },
@@ -156,7 +154,7 @@
     { "question": "Can I use Printix alongside Microsoft Universal Print?", "answer": "Yes. Printix extends Universal Print capabilities with direct IP printing where jobs stay local, secure release workflows, and broader cross-platform support. Many organisations use Printix as the feature layer on top of Universal Print infrastructure." },
     { "question": "What about home and remote printing?", "answer": "Printix supports home office and remote printing without VPN. Users can print securely from any location, and IT retains central management and reporting visibility." },
     { "question": "How long does setup take?", "answer": "Printix is cloud-native with automatic updates. There is no complex installation or configuration required. Most organisations are operational within days, not weeks." },
-    { "question": "Is there a free trial?", "answer": "Yes. Printix offers a free 30-day trial with all features included. No credit card required." },
+    { "question": "Is there a free trial?", "answer": "Yes. Printix offers a free 30-day trial with all features included and no credit card required. Contact us to get started and we will set up your trial environment." },
     { "question": "What does the education plan include?", "answer": "Education institutions pay for staff and faculty users only. Student access is included free with an active staff subscription." },
     { "question": "How is billing calculated?", "answer": "Billing is based on active users -- anyone who logged into the Printix service at least once during the billing cycle. You only pay for users who actually use the service." }
   ],
@@ -165,14 +163,14 @@
     "formId": "295",
     "orUuid": "b5354573-4afb-4035-aa3d-c28c33abacca",
     "actionUrl": "https://voicerecognition.activehosted.com/proc.php",
-    "submitText": "Request Information",
+    "submitText": "Request Free Trial",
     "cfields": { "21": "number_of_users", "35": "company", "18": "comments_about_your_needs" }
   },
 
   "footer": {
     "tagline": "Cloud print management for Australian business, government, healthcare and education. Authorised Tungsten Printix reseller.",
     "columns": [
-      { "heading": "Product", "links": [{ "label": "Features", "href": "/#features" }, { "label": "Pricing", "href": "/pricing" }, { "label": "Free trial", "href": "https://printix.net/printix-trial" }] },
+      { "heading": "Product", "links": [{ "label": "Features", "href": "/#features" }, { "label": "Pricing", "href": "/pricing" }, { "label": "Free trial", "href": "/contact" }] },
       { "heading": "Who it's for", "links": [{ "label": "Government", "href": "/government" }, { "label": "Enterprise", "href": "/enterprise" }, { "label": "Legal", "href": "/legal" }, { "label": "Medical", "href": "/medical" }, { "label": "Education", "href": "/education" }] },
       { "heading": "Compare", "links": [{ "label": "vs PaperCut", "href": "/compare/printix-vs-papercut" }, { "label": "vs Universal Print", "href": "/compare/printix-vs-universal-print" }, { "label": "vs Vasion Print", "href": "/compare/printix-vs-vasion-print" }] },
       { "heading": "Company", "links": [{ "label": "Contact", "href": "/contact" }, { "label": "Learn", "href": "/learn" }, { "label": "Privacy", "href": "/privacy" }, { "label": "Terms", "href": "/terms" }] }
