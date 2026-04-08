@@ -15,17 +15,35 @@ function imgAlt(key) {
   return manifest[key]?.altText || key;
 }
 
+// Build absolute hero image URL for Product schema (required by Google)
+const heroImageUrl = imgSrc('hero');
+const productImages = heroImageUrl ? [heroImageUrl] : [];
+
+// priceValidUntil = end of current calendar year (rolling)
+const priceValidUntil = `${new Date().getFullYear()}-12-31`;
+
 const productSchema = {
   "@context": "https://schema.org",
   "@type": site.structuredData.type,
   "name": site.structuredData.name,
   "description": site.structuredData.description,
+  "image": productImages,
+  "sku": "TUNGSTEN-PRINTIX-CLOUD",
+  "mpn": "PRINTIX-CLOUD-AU",
   "brand": { "@type": "Brand", "name": site.structuredData.brand },
   "offers": site.structuredData.offers.map(o => ({
     "@type": "Offer",
     "price": o.price,
     "priceCurrency": o.priceCurrency,
-    "description": o.description
+    "description": o.description,
+    "availability": "https://schema.org/InStock",
+    "priceValidUntil": priceValidUntil,
+    "url": "https://cloudprinting.au/contact",
+    "seller": {
+      "@type": "Organization",
+      "name": site.organization.name,
+      "url": site.organization.url
+    }
   }))
 };
 
