@@ -1,10 +1,15 @@
 ---
 import site from '../site.config.json';
-const { title, description, canonicalUrl, extraSchema } = Astro.props;
+const { title, description, canonicalUrl: canonicalUrlProp, extraSchema } = Astro.props;
 const pageTitle = title ? `${title} | ${site.siteName}` : site.seoTitle;
 const pageDescription = description || site.seoDescription;
 const c = site.colours;
 const R2 = import.meta.env.PUBLIC_R2_BASE || '';
+
+// Canonical URL: use the prop if explicitly passed, otherwise derive from current path.
+// This guarantees every page emits a self-referential canonical and prevents Google
+// from treating apex/www/preview-domain variants as duplicates.
+const canonicalUrl = canonicalUrlProp || new URL(Astro.url.pathname, site.siteUrl).href;
 
 // Build breadcrumb from current URL path
 const pathname = Astro.url.pathname;
@@ -73,7 +78,7 @@ const breadcrumbSchema = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{pageTitle}</title>
   <meta name="description" content={pageDescription} />
-  {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+  <link rel="canonical" href={canonicalUrl} />
   <link rel="icon" type="image/png" href="/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
